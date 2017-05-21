@@ -1,0 +1,46 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+h1
+{
+	font-size:3em;
+}
+h2
+{
+	font-size:2em;
+}
+#game
+{
+	margin-top:25px;
+}
+#isofnietRow
+{
+	margin-top:20px;
+	
+	.isofnietButtons
+	{
+		width:10%;
+	}	
+}
+#possibleAnswersRow
+{
+	margin-top:10px;
+
+	.possibleAnswerDiv
+	{
+		width:auto;
+		float:left;
+		margin-right:10px;
+
+		.possibleAnswerButton
+		{
+			width:100px;
+		}
+	}
+}
+
+

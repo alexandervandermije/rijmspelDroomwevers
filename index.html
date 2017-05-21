@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        
+        <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+        <!--[if IE]>
+            <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <![endif]-->
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    </head>
+    <body ng-app="gameApp" ng-controller="MainController">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>IS of IS NIET Spel</h1>
+            </div>
+        </div>
+        <div id="game">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>{{questions[currentQuestion].question}}</h2>
+                </div>
+            </div>
+            <div id="isofnietRow" class="row">
+                <div class="col-sm-12">
+                    <button ng-click="isTrue = true; isTrueorFalseFilledIn = true" class="btn btn-success isofnietButtons">IS</button>
+                    <button ng-click="isTrue = false; isTrueorFalseFilledIn = true" class="btn btn-danger isofnietButtons">IS NIET</button>
+                    <p ng-show="questions[currentQuestion].een == true">een</p>
+                    <p ng-show="isTrueorFalseFilledIn == false">Vul eerst in of het is of is niet is!</p> 
+                </div>
+            </div>
+            <div id="possibleAnswersRow" class="row">
+                <div class="col-sm-12">
+                    <div class="possibleAnswerDiv" ng-repeat="possibleAnswer in questions[currentQuestion].possibleAnswers">
+                        <button ng-click="checkAnswer(this)" class="btn possibleAnswerButton">{{possibleAnswer}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
