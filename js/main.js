@@ -10,6 +10,7 @@ gameApp.controller('MainController', function MainController($scope) {
 
 	$scope.currentQuestion = 0;
 	$scope.isTrue;
+	$scope.score = 0;
 
 	$scope.checkAnswer = function(chosenAnswer)
 	{
@@ -18,6 +19,7 @@ gameApp.controller('MainController', function MainController($scope) {
 			if(chosenAnswer.possibleAnswer == $scope.questions[$scope.currentQuestion].correctAnswer)
 			{
 				console.log("vraag correct beantwoord!");
+				$scope.score++;
 			}
 			else
 			{

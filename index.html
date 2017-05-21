@@ -36,7 +36,7 @@
                 <div class="col-sm-12">
                     <button ng-click="isTrue = true; isTrueorFalseFilledIn = true" class="btn btn-success isofnietButtons">IS</button>
                     <button ng-click="isTrue = false; isTrueorFalseFilledIn = true" class="btn btn-danger isofnietButtons">IS NIET</button>
-                    <p ng-show="questions[currentQuestion].een == true">een</p>
+                    <div ng-show="questions[currentQuestion].een == true">een</div>
                     <p ng-show="isTrueorFalseFilledIn == false">Vul eerst in of het is of is niet is!</p> 
                 </div>
             </div>
@@ -47,6 +47,9 @@
                     </div>
                 </div>
             </div>
+            <div id="menuRow" class="row">
+                <div class="col-sm-12">
+                    <p>Vraag nummer: {{currentQuestion +1}}<p>Score: {{score}}</p>
         </div>
     </div>
     
