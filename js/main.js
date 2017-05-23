@@ -2,10 +2,10 @@ var gameApp = angular.module('gameApp', []);
 gameApp.controller('MainController', function MainController($scope) {
 
 	$scope.questions = [
-	{question:"In het midden",possibleAnswers:["egaal", "fataal", "ideaal", "centraal"],is:true,correctAnswer:"centraal", een: false},
-	{question:"Een oor", possibleAnswers:["loog","zoog","boog","oog"], is:false,correctAnswer:"oog",een:true},
-	{question:"Snel", possibleAnswers:["vandaag","maag","traag","vraag"], is:false, correctAnswer:"traag", een: false},
-	{question:"Laag", possibleAnswers:["oog", "hoog", "boog","droog"], is:false, correctAnswer:"hoog", een:false}
+	{question:"In het midden",possibleAnswers:["egaal", "fataal", "ideaal", "centraal"],is:'is',correctAnswer:"centraal", een: false},
+	{question:"Een oor", possibleAnswers:["loog","zoog","boog","oog"], is:'is niet',correctAnswer:"oog",een:true},
+	{question:"Snel", possibleAnswers:["vandaag","maag","traag","vraag"], is:'is niet', correctAnswer:"traag", een: false},
+	{question:"Laag", possibleAnswers:["oog", "hoog", "boog","droog"], is:'is niet', correctAnswer:"hoog", een:false}
 	];
 
 	$scope.currentQuestion = 0;

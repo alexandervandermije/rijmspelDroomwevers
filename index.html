@@ -37,8 +37,8 @@
             </div>
             <div id="isofnietRow" class="row">
                 <div class="col-sm-12">
-                    <button ng-class="{grayScale : isTrue == false}" ng-click="isTrue = true; isTrueorFalseFilledIn = true" class="btn btn-success isofnietButtons">IS<div class="extraWord" ng-show="questions[currentQuestion].een == true">een</div></button>
-                    <button ng-class="{grayScale : isTrue == true && isTrue != ''}" ng-click="isTrue = false; isTrueorFalseFilledIn = true" class="btn btn-danger isofnietButtons">IS NIET<div class="extraWord" ng-show="questions[currentQuestion].een == true">een</div></button>
+                    <button ng-class="{grayScale : isTrue == 'is niet' && isTrue != ''}" ng-click="isTrue = 'is'; isTrueorFalseFilledIn = true" class="btn btn-success isofnietButtons">IS<div class="extraWord" ng-show="questions[currentQuestion].een == true">een</div></button>
+                    <button ng-class="{grayScale : isTrue == 'is' && isTrue != ''}" ng-click="isTrue = 'is niet'; isTrueorFalseFilledIn = true" class="btn btn-danger isofnietButtons">IS NIET<div class="extraWord" ng-show="questions[currentQuestion].een == true">een</div></button>
                     <p ng-show="isTrueorFalseFilledIn == false">Vul eerst in of het is of is niet is!</p> 
                 </div>
             </div>
