@@ -14,7 +14,8 @@ gameApp.controller('MainController', function MainController($scope) {
 
 	$scope.checkAnswer = function(chosenAnswer)
 	{
-		if($scope.isTrue == $scope.questions[$scope.currentQuestion].is)
+		console.log($scope.isTrue);
+		if($scope.isTrue == $scope.questions[$scope.currentQuestion].is && $scope.isTrue != '')
 		{
 			if(chosenAnswer.possibleAnswer == $scope.questions[$scope.currentQuestion].correctAnswer)
 			{
@@ -33,5 +34,7 @@ gameApp.controller('MainController', function MainController($scope) {
 		
 		$scope.currentQuestion++;
 		$scope.$apply;
+		$scope.isTrue = '';
+
 	}
 });

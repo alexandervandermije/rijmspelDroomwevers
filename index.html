@@ -15,7 +15,9 @@
         <!--[if IE]>
             <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
         <![endif]-->
-
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Fascinate+Inline|Iceland|Monoton|Press+Start+2P');
+        </style>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     </head>
@@ -29,14 +31,14 @@
         <div id="game">
             <div class="row">
                 <div class="col-sm-12">
+                    <p id="questionNumber">Vraag nummer: {{currentQuestion +1}}</p>
                     <h2>{{questions[currentQuestion].question}}</h2>
                 </div>
             </div>
             <div id="isofnietRow" class="row">
                 <div class="col-sm-12">
-                    <button ng-click="isTrue = true; isTrueorFalseFilledIn = true" class="btn btn-success isofnietButtons">IS</button>
-                    <button ng-click="isTrue = false; isTrueorFalseFilledIn = true" class="btn btn-danger isofnietButtons">IS NIET</button>
-                    <div ng-show="questions[currentQuestion].een == true">een</div>
+                    <button ng-class="{grayScale : isTrue == false}" ng-click="isTrue = true; isTrueorFalseFilledIn = true" class="btn btn-success isofnietButtons">IS<div class="extraWord" ng-show="questions[currentQuestion].een == true">een</div></button>
+                    <button ng-class="{grayScale : isTrue == true && isTrue != ''}" ng-click="isTrue = false; isTrueorFalseFilledIn = true" class="btn btn-danger isofnietButtons">IS NIET<div class="extraWord" ng-show="questions[currentQuestion].een == true">een</div></button>
                     <p ng-show="isTrueorFalseFilledIn == false">Vul eerst in of het is of is niet is!</p> 
                 </div>
             </div>
@@ -49,7 +51,7 @@
             </div>
             <div id="menuRow" class="row">
                 <div class="col-sm-12">
-                    <p>Vraag nummer: {{currentQuestion +1}}</p><p>Score: {{score}}</p>
+                    <p>Score: {{score}}</p>
                 </div>
             </div>
 
