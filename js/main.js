@@ -18,7 +18,8 @@ gameApp.controller('MainController', function MainController($scope) {
 
 	$scope.currentQuestion = 0;
 	$scope.totalQuestions = $scope.questions.length;
-	$scope.isTrue;
+	$scope.isTrue = '';
+	$scope.isTrueorFalseFilledIn = true;
 	$scope.score = 0;
 
 	var succesAudio = new Audio("sound/kidsCheering.mp3");
@@ -27,30 +28,37 @@ gameApp.controller('MainController', function MainController($scope) {
 	foutAudio.volume = 0.1;
 	$scope.checkAnswer = function(chosenAnswer)
 	{
-		console.log($scope.isTrue);
-		if($scope.isTrue == $scope.questions[$scope.currentQuestion].is && $scope.isTrue != '')
+		if($scope.isTrue != '')
 		{
-			if(chosenAnswer.possibleAnswer == $scope.questions[$scope.currentQuestion].correctAnswer)
+			if($scope.isTrue == $scope.questions[$scope.currentQuestion].is && $scope.isTrue != '')
 			{
-				console.log("vraag correct beantwoord!");
-				succesAudio.play();
-				$scope.score++;
+				if(chosenAnswer.possibleAnswer == $scope.questions[$scope.currentQuestion].correctAnswer)
+				{
+					console.log("vraag correct beantwoord!");
+					succesAudio.play();
+					$scope.score++;
+				}
+				else
+				{
+					foutAudio.play();
+					console.log("is/is niet goed beantwoord,verkeerde woord gekozen!");
+				}
 			}
 			else
 			{
 				foutAudio.play();
-				console.log("is/is niet goed beantwoord,verkeerde woord gekozen!");
+				console.log("is/is niet fout beantwoord");
 			}
+			
+			$scope.currentQuestion++;
+			$scope.$apply;
+			$scope.isTrue = '';
 		}
 		else
 		{
-			foutAudio.play();
-			console.log("is/is niet fout beantwoord");
+			$scope.isTrueorFalseFilledIn = false;
 		}
 		
-		$scope.currentQuestion++;
-		$scope.$apply;
-		$scope.isTrue = '';
 
 	}
 });
