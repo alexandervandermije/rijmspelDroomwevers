@@ -12,9 +12,12 @@ gameApp.controller('MainController', function MainController($scope) {
 	{question:"Een cirkel", possibleAnswers:["lijn", "plein", "trein","mijn"], is:'is niet', correctAnswer:"lijn", een:false},
 	{question:"Een grapje", possibleAnswers:["gein", "gordijn", "fontein","terrein"], is:'is', correctAnswer:"gein", een:true},
 	{question:"Onweer", possibleAnswers:["weer", "meneer", "verkeer","studeer"], is:'is', correctAnswer:"weer", een:false},
+	{question:"Pijnlijk", possibleAnswers:["zeer", "meer", "neer","ongeveer"], is:'is', correctAnswer:"zeer", een:false},
+	{question:"Noord", possibleAnswers:["zuid", "kruid", "vanuit","spruit"], is:'is niet', correctAnswer:"zuid", een:false}
 	];
 
 	$scope.currentQuestion = 0;
+	$scope.totalQuestions = $scope.questions.length;
 	$scope.isTrue;
 	$scope.score = 0;
 

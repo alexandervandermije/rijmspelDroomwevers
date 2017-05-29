@@ -31,7 +31,7 @@
         <div id="game">
             <div class="row">
                 <div class="col-sm-12">
-                    <p id="questionNumber">Vraag nummer: {{currentQuestion +1}}</p>
+                    <p id="questionNumber">Vraag nummer: {{currentQuestion +1}}/{{totalQuestions +1}}</p>
                     <h2>{{questions[currentQuestion].question}}</h2>
                 </div>
             </div>
@@ -51,7 +51,7 @@
             </div>
             <div id="menuRow" class="row">
                 <div class="col-sm-12">
-                    <p>Score: {{score}}</p>
+                    <p id="score">Score: {{score}}</p>
                 </div>
             </div>
 
