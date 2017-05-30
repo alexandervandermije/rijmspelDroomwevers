@@ -25,13 +25,25 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                <h1>IS of IS NIET Spel</h1>
+                <h1>Het IS of IS NIET Spel</h1>
             </div>
         </div>
         <div id="game">
+            <div id="dialog" ng-show="dialogActive == true">
+                <div id="foutDialog" ng-show="dialogState == 'wrongAnswer'">
+                    <h2>Helaas, Dat klopt niet!</h2>
+                    <p>Het juiste antwoord is : {{questions[currentQuestion].question}} {{questions[currentQuestion].is}} <span ng-show="questions[currentQuestion].een == true">een</span> {{questions[currentQuestion].correctAnswer}}</p>
+                    <button class="btn btn-success" ng-click="nextQuestion()">Ga verder</button>
+                </div>
+                <div id="endGameDialog" ng-show="dialogState == 'endGame'">
+                    <h2>Einde van het spel!</h2>
+                    <p>Je hebt het spel uitgespeeld, gefeliciteerd! Je hebt {{score}} punten verdiend!</p>
+                    <button class="btn btn-success" ng-click="restartGame()">Het spel nog een keer spelen?</button>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <p id="questionNumber">Vraag nummer: {{currentQuestion +1}}/{{totalQuestions +1}}</p>
+                    <p id="questionNumber">Vraag nummer: {{currentQuestion +1}}/{{totalQuestions}}</p>
                     <h2>{{questions[currentQuestion].question}}</h2>
                 </div>
             </div>
@@ -54,7 +66,16 @@
                     <p id="score">Score: {{score}}</p>
                 </div>
             </div>
-
+            <div id="gameRulesRow">
+                <h2>SpelRegels</h2>
+                <div class="col-sm-4 col-sm-offset-2">
+                    <p>Lees de gegeven woord(en).Daarna kies je de  categorie ís'of 'is niet'.'Doelstelling is om het gegeven woord zo dichtbij mogelijk te matchen met het tegenovergestelde woord of het woord met dezelfde betekenis. Kies eerst of het hetzelfde is, of het tegenovergestelde.</p>
+                </div>
+                <div class="col-sm-4">
+                    <p>Als je het juiste antwoord kiest, hoor je gejuich. Als je het verkeerde antwoord kiest, is er een afkeurende reactie. Het juiste antwoord heeft een relatie met het gegeven woord.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
     

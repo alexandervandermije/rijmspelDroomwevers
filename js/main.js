@@ -16,16 +16,22 @@ gameApp.controller('MainController', function MainController($scope) {
 	{question:"Noord", possibleAnswers:["zuid", "kruid", "vanuit","spruit"], is:'is niet', correctAnswer:"zuid", een:false}
 	];
 
+	$scope.dialogActive = false;
+	$scope.dialogState = '';
+
 	$scope.currentQuestion = 0;
 	$scope.totalQuestions = $scope.questions.length;
 	$scope.isTrue = '';
 	$scope.isTrueorFalseFilledIn = true;
 	$scope.score = 0;
 
+	
+
 	var succesAudio = new Audio("sound/kidsCheering.mp3");
 	succesAudio.volume = 0.1;
 	var foutAudio = new Audio("sound/kidsAww.mp3");
 	foutAudio.volume = 0.1;
+
 	$scope.checkAnswer = function(chosenAnswer)
 	{
 		if($scope.isTrue != '')
@@ -37,28 +43,49 @@ gameApp.controller('MainController', function MainController($scope) {
 					console.log("vraag correct beantwoord!");
 					succesAudio.play();
 					$scope.score++;
+					$scope.nextQuestion();
 				}
 				else
 				{
 					foutAudio.play();
-					console.log("is/is niet goed beantwoord,verkeerde woord gekozen!");
+					$scope.dialogActive = true;
+					$scope.dialogState = 'wrongAnswer';
 				}
 			}
 			else
 			{
 				foutAudio.play();
-				console.log("is/is niet fout beantwoord");
+				$scope.dialogActive = true;
+				$scope.dialogState = 'wrongAnswer';
 			}
-			
-			$scope.currentQuestion++;
-			$scope.$apply;
-			$scope.isTrue = '';
 		}
 		else
 		{
 			$scope.isTrueorFalseFilledIn = false;
 		}
-		
-
+	}
+	$scope.nextQuestion = function()
+	{
+		if($scope.currentQuestion + 1 >= $scope.totalQuestions)
+		{
+			$scope.dialogActive = true;
+			$scope.dialogState = 'endGame';
+		}
+		else
+		{
+			$scope.dialogState = '';
+			$scope.dialogActive = false;
+			$scope.currentQuestion++;
+			$scope.isTrue = '';
+			$scope.$apply;
+		}
+	}
+	$scope.restartGame = function()
+	{
+		$scope.dialogActive = false;
+		$scope.dialogState = '';
+		$scope.currentQuestion = 0;
+		$scope.isTrue = '';
+		$scope.$apply;
 	}
 });
