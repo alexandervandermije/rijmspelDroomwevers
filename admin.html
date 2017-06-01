@@ -27,44 +27,17 @@
         <div class="col-sm-10 col-sm-offset-1">
             <form class="form-horizontal">
                 <div class="form-group">
-                    `<h2>De Vraag</h2>
+                    <h2>De Vraag</h2>
+                    <p class="warningText" ng-show="questionEmpty == true">Vul de vraag in!</p>
                     <label class="control-label col-sm-2" for="questionInput">Vraag</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="questionInput" ng-model="newQuestion.question">
                     </div>
                 </div>
                 <div class="form-group">
-                    <h2>Mogelijke antwoorden</h2>
-                    <label class="control-label col-sm-2" for="possibleAnswer1">Antwoord 1</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="possibleAnswer1" ng-model="newQuestion.possibleAnswer1">
-                    </div>
-
-                    <label class="control-label col-sm-2" for="possibleAnswer2">Antwoord 2</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="possibleAnswer2" ng-model="newQuestion.possibleAnswer2">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="possibleAnswer3">Antwoord 3</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="possibleAnswer3" ng-model="newQuestion.possibleAnswer3">
-                    </div>
-
-                    <label class="control-label col-sm-2" for="possibleAnswer4">Antwoord 4</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="possibleAnswer4" ng-model="newQuestion.possibleAnswer4">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="correctAnswer">Correct Antwoord</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="correctAnswer" ng-model="newQuestion.correctAnswer">
-                    </div>
-                </div>
-                <div class="form-group">
                     <h2>IS of IS NIET</h2>
-                    <div class="col-sm-2 col-sm-offset-2">
+                    <p class="warningText" ng-show="optionIsEmpty == true">Vul in of het is/is niet is</p>
+                    <div class="col-sm-4 col-sm-offset-2">
                         <div class="radio-inline">
                             <label>
                                 <input name="isOfisnietOptions" type="radio" id="optionIs" ng-value="'is'" ng-checked="newQuestion.optionIs == 'is'" ng-model="newQuestion.optionIs">
@@ -78,12 +51,59 @@
                             </label>
                         </div>
                     </div>
-                    <label class="control-label col-sm-2 col-sm-offset-2" for="extraWordInput">Mogelijk extra woord</label>
+                    <label class="control-label col-sm-2" for="extraWordInput">Mogelijk extra woord</label>
                     <div class="col-sm-4">
                         <input type="text" class="form-control" id="extraWordInput" ng-model="newQuestion.extraWord">
                     </div>
-                    <label class="control-label" for="extraWordInput">Bijvoorbeeld een, als in Een grapje IS een ... Laat leeg als dit niet van toepassing is</p>
+                    <label id="extraWordExplanation" class="control-label" for="extraWordInput">Bijvoorbeeld een, als in Een grapje IS een ... Laat leeg als dit niet van toepassing is</p>
+                </div>
+                <div class="form-group">
+                    <h2>Mogelijke antwoorden</h2>
+                    <p class="warningText" ng-show="answersEmpty == true">Vul alle antwoorden in!</p>
+                    <label class="control-label col-sm-2" for="possibleAnswer1">Antwoord 1</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="possibleAnswer1" ng-model="newQuestion.possibleAnswer1">
+                    </div>
+                    <div class="radio col-sm-1">
+                        <label>
+                            <input name='correctAnswerOptions' type="radio" ng-value="newQuestion.possibleAnswer1" ng-checked="newQuestion.correctAnswer == newQuestion.possibleAnswer1" ng-model="newQuestion.correctAnswer">
+                            Correct antwoord?
+                        </label>
+                    </div>
 
+                    <label class="control-label col-sm-2" for="possibleAnswer2">Antwoord 2</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="possibleAnswer2" ng-model="newQuestion.possibleAnswer2">
+                    </div>
+                    <div class="radio col-sm-1">
+                        <label>
+                            <input name='correctAnswerOptions' type="radio" ng-value="newQuestion.possibleAnswer2" ng-checked="newQuestion.correctAnswer == newQuestion.possibleAnswer2 " ng-model="newQuestion.correctAnswer">
+                            Correct antwoord?
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="possibleAnswer3">Antwoord 3</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="possibleAnswer3" ng-model="newQuestion.possibleAnswer3">
+                    </div>
+                    <div class="radio col-sm-1">
+                        <label>
+                            <input name='correctAnswerOptions' type="radio" ng-value="newQuestion.possibleAnswer3" ng-checked="newQuestion.correctAnswer == newQuestion.possibleAnswer3" ng-model="newQuestion.correctAnswer">
+                            Correct antwoord?
+                        </label>
+                    </div>
+
+                    <label class="control-label col-sm-2" for="possibleAnswer4">Antwoord 4</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="possibleAnswer4" ng-model="newQuestion.possibleAnswer4">
+                    </div>
+                    <div class="radio col-sm-1">
+                        <label>
+                            <input name='correctAnswerOptions' type="radio" ng-value="newQuestion.possibleAnswer4" ng-checked="newQuestion.correctAnswer == newQuestion.possibleAnswer4" ng-model="newQuestion.correctAnswer">
+                            Correct antwoord?
+                        </label>
+                    </div>
                 </div>
                 <div class="form-group">
                     <button id="newQuestionButton" ng-click="enterNewQuestion()" type="submit" class="btn btn-default">Voeg nieuwe vraag toe</button>

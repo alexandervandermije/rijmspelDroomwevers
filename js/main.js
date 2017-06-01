@@ -16,17 +16,24 @@ gameApp.controller('MainController', function MainController($scope) {
 	{question:"Noord", possibleAnswers:["zuid", "kruid", "vanuit","spruit"], is:'is niet', correctAnswer:"zuid", een:false}
 	];
 
+	// Input Form & = Form validation variables
 	$scope.newQuestion = '';
+	$scope.optionIsEmpty = false;
+	$scope.answersEmpty = false;
+	$scope.questionEmpty = false;
 
+	// Dialog window variables
 	$scope.dialogActive = false;
 	$scope.dialogState = '';
 
+	// Main game Variables
 	$scope.currentQuestion = 0;
 	$scope.totalQuestions = $scope.questions.length;
 	$scope.isTrue = '';
 	$scope.isTrueorFalseFilledIn = true;
 	$scope.score = 0;
 
+	// Audio files
 	var succesAudio = new Audio("sound/kidsCheering.mp3");
 	succesAudio.volume = 0.1;
 	var foutAudio = new Audio("sound/kidsAww.mp3");
@@ -34,12 +41,43 @@ gameApp.controller('MainController', function MainController($scope) {
 
 	$scope.enterNewQuestion = function()
 	{
-		console.log($scope.newQuestion)
-		if(typeof $scope.newQuestion.optionIs == 'undefined')
+		console.log($scope.newQuestion);
+		if(typeof $scope.newQuestion.question == 'undefined')
 		{
-			console.log("blabla")
+			$scope.questionEmpty = true;
 		}
-
+		else
+		{
+			$scope.questionEmpty = false;
+			if(typeof $scope.newQuestion.optionIs == 'undefined')
+			{
+				$scope.optionIsEmpty = true;
+			}
+			else
+			{
+				$scope.optionIsEmpty = false;
+				if(typeof $scope.newQuestion.possibleAnswer1 == 'undefined')
+				{
+					$scope.answersEmpty = true;
+				}
+				else if(typeof $scope.newQuestion.possibleAnswer2 == 'undefined')
+				{
+					$scope.answersEmpty = true;
+				}
+				else if(typeof $scope.newQuestion.possibleAnswer3 == 'undefined')
+				{
+					$scope.answersEmpty = true;
+				}
+				else if(typeof $scope.newQuestion.possibleAnswer4 == 'undefined')
+				{
+					$scope.answersEmpty = true;
+				}
+				else
+				{
+					$scope.answersEmpty = false;
+				}
+			}
+		}
 	}
 	$scope.checkAnswer = function(chosenAnswer)
 	{

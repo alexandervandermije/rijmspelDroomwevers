@@ -208,3 +208,15 @@ form h2 {
 form button {
   float: right;
 }
+/* line 146, ../sass/screen.scss */
+form #extraWordExplanation {
+  float: right;
+}
+
+/* line 152, ../sass/screen.scss */
+.warningText {
+  color: red;
+  text-align: center;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
