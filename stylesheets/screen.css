@@ -198,3 +198,13 @@ p, button {
 #gameRulesRow h2 {
   margin-bottom: 10px;
 }
+
+/* line 137, ../sass/screen.scss */
+form h2 {
+  text-align: center;
+  margin-bottom: 1%;
+}
+/* line 142, ../sass/screen.scss */
+form button {
+  float: right;
+}

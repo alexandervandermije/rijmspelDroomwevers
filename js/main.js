@@ -16,6 +16,8 @@ gameApp.controller('MainController', function MainController($scope) {
 	{question:"Noord", possibleAnswers:["zuid", "kruid", "vanuit","spruit"], is:'is niet', correctAnswer:"zuid", een:false}
 	];
 
+	$scope.newQuestion = '';
+
 	$scope.dialogActive = false;
 	$scope.dialogState = '';
 
@@ -25,13 +27,20 @@ gameApp.controller('MainController', function MainController($scope) {
 	$scope.isTrueorFalseFilledIn = true;
 	$scope.score = 0;
 
-	
-
 	var succesAudio = new Audio("sound/kidsCheering.mp3");
 	succesAudio.volume = 0.1;
 	var foutAudio = new Audio("sound/kidsAww.mp3");
 	foutAudio.volume = 0.1;
 
+	$scope.enterNewQuestion = function()
+	{
+		console.log($scope.newQuestion)
+		if(typeof $scope.newQuestion.optionIs == 'undefined')
+		{
+			console.log("blabla")
+		}
+
+	}
 	$scope.checkAnswer = function(chosenAnswer)
 	{
 		if($scope.isTrue != '')
