@@ -212,8 +212,13 @@ form button {
 form #extraWordExplanation {
   float: right;
 }
+/* line 150, ../sass/screen.scss */
+form #extraWordCheckbox {
+  height: 28px;
+  margin-top: 2px;
+}
 
-/* line 152, ../sass/screen.scss */
+/* line 157, ../sass/screen.scss */
 .warningText {
   color: red;
   text-align: center;
