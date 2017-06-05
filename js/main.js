@@ -16,6 +16,16 @@ gameApp.controller('MainController', function MainController($scope) {
 	{question:"Noord", possibleAnswers:["zuid", "kruid", "vanuit","spruit"], is:'is niet', correctAnswer:"zuid", een:false}
 	];
 
+	$.ajax({
+		type:'GET',
+		url:'getQuestions.php',
+		data: '',
+		dataType: 'json',
+		success: function(data)
+		{
+			console.log(data.length);
+		}
+	})
 	// Input Form & = Form validation variables
 	$scope.newQuestion = '';
 	$scope.optionIsEmpty = false;
