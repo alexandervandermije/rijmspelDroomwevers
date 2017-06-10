@@ -32,7 +32,6 @@ gameApp.controller('MainController', function MainController($scope, $http) {
 				$scope.game.questions[i].een = result.data[i][8];
 			}
 		})
-	
 
 	// Input Form & = Form validation variables
 	$scope.newQuestion = '';
