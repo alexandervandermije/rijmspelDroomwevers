@@ -1,14 +1,14 @@
 <?php
 
-$connection = mysql_connect("localhost", "root", "");
-$db = mysql_select_db("droomweversrijmspel", $connection);
+$connection = new mysqli("localhost", "root", "", "droomwevers");
 
-$result = mysql_query("SELECT * FROM questions"); 
+
+$result = mysqli_query($connection, "SELECT * FROM rijmspelquestions"); 
 $data = array();
-while ( $row = mysql_fetch_row($result) )
+while ( $row = mysqli_fetch_row($result) )
 {
   $data[] = $row;
 }
 echo json_encode($data);
-mysql_close($connection);
+mysqli_close($connection);
 ?>

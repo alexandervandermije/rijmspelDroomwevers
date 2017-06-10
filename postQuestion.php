@@ -9,10 +9,10 @@ $SendPossibleAnswer4 = $_POST['possibleAnswer4'];
 $SendCorrectAnswer = $_POST['correctAnswer'];
 
 
-$connection = mysql_connect("localhost", "root", "");
-$db = mysql_select_db("droomweversrijmspel", $connection);
+$connection = new mysqli("localhost", "root", "", "droomwevers");
 
-$query = mysql_query("insert into questions(question, answer1, answer2, answer3, answer4, correctAnswer,optionIs, een) values ('$SendQuestion', '$SendPossibleAnswer1','$SendPossibleAnswer2','$SendPossibleAnswer3','$SendPossibleAnswer4','$SendCorrectAnswer','$SendOptionIs','$SendExtraWord' )"); 
+
+$query = mysqli_query($connection,"insert into rijmspelquestions(question, answer1, answer2, answer3, answer4, correctAnswer,optionIs, een) values ('$SendQuestion', '$SendPossibleAnswer1','$SendPossibleAnswer2','$SendPossibleAnswer3','$SendPossibleAnswer4','$SendCorrectAnswer','$SendOptionIs','$SendExtraWord' )"); 
 	echo "Form Submitted succesfully";
-mysql_close($connection);
+mysqli_close($connection);
 ?>

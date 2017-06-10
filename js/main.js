@@ -1,5 +1,5 @@
 var gameApp = angular.module('gameApp', []);
-gameApp.controller('MainController', function MainController($scope) {
+gameApp.controller('MainController', function MainController($scope, $http) {
 
 	$scope.questions = [
 	{question:"In het midden",possibleAnswers:["egaal", "fataal", "ideaal", "centraal"],is:'is',correctAnswer:"centraal", een: false},
@@ -15,17 +15,25 @@ gameApp.controller('MainController', function MainController($scope) {
 	{question:"Pijnlijk", possibleAnswers:["zeer", "meer", "neer","ongeveer"], is:'is', correctAnswer:"zeer", een:false},
 	{question:"Noord", possibleAnswers:["zuid", "kruid", "vanuit","spruit"], is:'is niet', correctAnswer:"zuid", een:false}
 	];
-
-	$.ajax({
-		type:'GET',
-		url:'getQuestions.php',
-		data: '',
-		dataType: 'json',
-		success: function(data)
+	
+	$scope.game = this;
+	$scope.game.questions = []
+	$http.get('getQuestions.php')
+		.then(function(result)
 		{
-			console.log(data.length);
-		}
-	})
+			for(var i in result.data)
+			{
+				$scope.game.questions[i] = {};
+				$scope.game.questions[i].id = result.data[i][0];
+				$scope.game.questions[i].question = result.data[i][1];
+				$scope.game.questions[i].is = result.data[i][2];
+				$scope.game.questions[i].possibleAnswers = [result.data[i][3],result.data[i][4],result.data[i][5],result.data[i][6]];
+				$scope.game.questions[i].correctAnswer = result.data[i][7];
+				$scope.game.questions[i].een = result.data[i][8];
+			}
+		})
+	
+
 	// Input Form & = Form validation variables
 	$scope.newQuestion = '';
 	$scope.optionIsEmpty = false;
@@ -103,6 +111,7 @@ gameApp.controller('MainController', function MainController($scope) {
 						}
 
 					});
+					location.reload();
 				}
 			}
 		}
