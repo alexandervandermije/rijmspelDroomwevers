@@ -24,7 +24,12 @@
     <body ng-app="gameApp" ng-controller="MainController">
     <div class="container-fluid">
         <h1>Admin </h1>
-        <div class="col-sm-10 col-sm-offset-1">
+        <div class="col-sm-4 col-sm-offset-4">
+            <button ng-click="adminWindow = 'newQuestion'" class="btn btn-default">Voeg een nieuwe vraag toe!</button>
+            <button ng-click="adminWindow = 'manageQuestions'" class="btn btn-default">Manage vragen</button>
+        </div>
+        <div ng-show="adminWindow == 'newQuestion'" class="col-sm-10 col-sm-offset-1">
+            <h2> Voeg een nieuwe vraag toe</h2>
             <form class="form-horizontal">
                 <div class="form-group">
                     <h2>De Vraag</h2>
@@ -108,9 +113,39 @@
                 <div class="form-group">
                     <button id="newQuestionButton" ng-click="enterNewQuestion()" type="submit" class="btn btn-default">Voeg nieuwe vraag toe</button>
                 </div>
-
             </form>
         </div>
+        <div class="col-sm-10 col-sm-offset-1" ng-show="adminWindow == 'manageQuestions'">
+            <h2>Manage Questions</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Vraag</th>
+                        <th>Is/is niet</th>
+                        <th>Antwoord 1</th>
+                        <th>Antwoord 2</th>
+                        <th>Antwoord 3</th>
+                        <th>Antwoord 4</th>
+                        <th>Correct antwoord</th>
+                        <th>Verwijder</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="questionData in game.questions">
+                        <td>{{questionData.id}}</td>
+                        <td>{{questionData.question}}</td>
+                        <td>{{questionData.is}}</td>
+                        <td>{{questionData.possibleAnswers[0]}}</td>
+                        <td>{{questionData.possibleAnswers[1]}}</td>
+                        <td>{{questionData.possibleAnswers[2]}}</td>
+                        <td>{{questionData.possibleAnswers[3]}}</td>
+                        <td>{{questionData.correctAnswer}}</td>
+                        <td><button ng-click="deleteQuestion(this)">Verwijder vraag?</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
 
     </div>
     

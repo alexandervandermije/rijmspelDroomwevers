@@ -3,7 +3,7 @@ gameApp.controller('MainController', function MainController($scope, $http) {
 
 	$scope.totalQuestions = 0;
 	$scope.game = this;
-	$scope.game.questions = []
+	$scope.game.questions = [];
 	$http.get('getQuestions.php')
 		.then(function(result)
 		{
@@ -30,6 +30,7 @@ gameApp.controller('MainController', function MainController($scope, $http) {
 	$scope.dialogActive = false;
 	$scope.dialogState = '';
 
+	$scope.adminWindow = 'manageQuestions'; 
 	// Main game Variables
 	$scope.currentQuestion = 0;
 	$scope.isTrue = '';
@@ -100,6 +101,31 @@ gameApp.controller('MainController', function MainController($scope, $http) {
 				}
 			}
 		}
+	}
+	$scope.deleteQuestion = function(question)
+	{
+		var config = 
+		{
+            headers : {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+            }
+        }
+		var data = $.param({
+                deleteID: question.questionData.id
+            });
+		$http.post("deleteQuestion.php",data, config)
+			.then(
+					function(response)
+					{
+						console.log('succes!');
+					},
+					function(response)
+					{
+						console.log('failure');
+					}
+				)
+
+		location.reload();
 	}
 	$scope.checkAnswer = function(chosenAnswer)
 	{
