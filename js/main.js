@@ -83,21 +83,36 @@ gameApp.controller('MainController', function MainController($scope, $http) {
 						$scope.newQuestion.extraWord = false;
 					}
 					$scope.answersEmpty = false;
-					var sendData = 'question=' + $scope.newQuestion.question + '&optionIs=' + $scope.newQuestion.optionIs + '&extraWord=' + $scope.newQuestion.extraWord + '&possibleAnswer1=' + $scope.newQuestion.possibleAnswer1 + '&possibleAnswer2=' + $scope.newQuestion.possibleAnswer2 + '&possibleAnswer3=' + $scope.newQuestion.possibleAnswer3 + '&possibleAnswer4=' + $scope.newQuestion.possibleAnswer4 + '&correctAnswer=' + $scope.newQuestion.correctAnswer; 	
-					console.log(sendData);
-					$.ajax
-					({
-						type: "POST",
-						url: "postQuestion.php",
-						data: sendData,
-						cache: false,
-						success: function(html) 
-						{
-							console.log('dataSend!');
-						}
+				
+					var config = 
+					{
+			            headers : {
+			                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+			            }
+			        }
+					var data = $.param({
+			                question:$scope.newQuestion.question,
+			                optionIs:$scope.newQuestion.optionIs,
+			                extraWord:$scope.newQuestion.extraWord,
+			                possibleAnswer1:$scope.newQuestion.possibleAnswer1,
+			                possibleAnswer2:$scope.newQuestion.possibleAnswer2,
+			                possibleAnswer3:$scope.newQuestion.possibleAnswer3,
+			                possibleAnswer4:$scope.newQuestion.possibleAnswer4,
+			                correctAnswer:$scope.newQuestion.correctAnswer
+			            });
+					$http.post("postQuestion.php",data, config)
+						.then(
+								function(response)
+								{
+									console.log('succes!');
+								},
+								function(response)
+								{
+									console.log('failure');
+								}
+							)
+					//location.reload();
 
-					});
-					location.reload();
 				}
 			}
 		}
