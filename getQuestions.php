@@ -1,7 +1,6 @@
 <?php
 
-$connection = new mysqli("localhost", "root", "", "droomwevers");
-
+include "connection.php";
 
 $result = mysqli_query($connection, "SELECT * FROM rijmspelquestions"); 
 $data = array();
