@@ -115,7 +115,7 @@ p, button {
 /* line 50, ../sass/screen.scss */
 .grayScale {
   background-image: none;
-  background-color: grey;
+  background-color: grey !important;
   border-color: grey;
 }
 
@@ -153,11 +153,11 @@ p, button {
 
 /* line 88, ../sass/screen.scss */
 #isofnietRow {
-  margin-top: 40px;
+  margin-top: 50px;
 }
-/* line 92, ../sass/screen.scss */
+/* line 91, ../sass/screen.scss */
 #isofnietRow .isofnietButtons {
-  width: 10%;
+  width: 125px;
   height: 50px;
   font-size: 24px;
   color: white;
@@ -165,35 +165,39 @@ p, button {
   border-radius: 5px;
   box-shadow: 1px 1px 5px grey;
 }
-/* line 102, ../sass/screen.scss */
+/* line 101, ../sass/screen.scss */
 #isofnietRow .isofnietButtons .extraWord {
   display: inline;
   text-transform: uppercase;
   margin-left: 4px;
 }
-/* line 109, ../sass/screen.scss */
+/* line 108, ../sass/screen.scss */
 #isofnietRow p {
+  margin-top: 20px;
+}
+/* line 112, ../sass/screen.scss */
+#isofnietRow p:first-of-type {
   display: inline;
   margin: 0 10px 0 10px;
 }
 
-/* line 115, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 #possibleAnswersRow {
   margin-top: 30px;
 }
-/* line 119, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
 #possibleAnswersRow .possibleAnswerDiv:first-of-type {
   margin-left: 0;
 }
-/* line 123, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
 #possibleAnswersRow .possibleAnswerDiv {
   width: auto;
   display: inline;
   margin-left: 15px;
 }
-/* line 129, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
 #possibleAnswersRow .possibleAnswerDiv .possibleAnswerButton {
-  width: 10%;
+  width: 125px;
   height: 50px;
   font-size: 21px;
   background-color: white;
@@ -202,41 +206,41 @@ p, button {
   box-shadow: 1px 1px 5px grey;
 }
 
-/* line 141, ../sass/screen.scss */
+/* line 144, ../sass/screen.scss */
 #score {
   margin-top: 2px;
   font-size: 28px;
 }
 
-/* line 146, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 #gameRulesRow {
   margin-top: 25px;
 }
-/* line 149, ../sass/screen.scss */
+/* line 152, ../sass/screen.scss */
 #gameRulesRow h2 {
   margin-bottom: 10px;
 }
 
-/* line 156, ../sass/screen.scss */
+/* line 159, ../sass/screen.scss */
 form h2 {
   text-align: center;
   margin-bottom: 1%;
 }
-/* line 161, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 form button {
   float: right;
 }
-/* line 165, ../sass/screen.scss */
+/* line 168, ../sass/screen.scss */
 form #extraWordExplanation {
   float: right;
 }
-/* line 169, ../sass/screen.scss */
+/* line 172, ../sass/screen.scss */
 form #extraWordCheckbox {
   height: 28px;
   margin-top: 2px;
 }
 
-/* line 176, ../sass/screen.scss */
+/* line 179, ../sass/screen.scss */
 .warningText {
   color: red;
   text-align: center;
@@ -244,13 +248,13 @@ form #extraWordCheckbox {
   margin-top: 1%;
 }
 
-/* line 183, ../sass/screen.scss */
+/* line 186, ../sass/screen.scss */
 #footer {
   width: 100%;
   position: fixed;
   bottom: 0;
 }
-/* line 188, ../sass/screen.scss */
+/* line 191, ../sass/screen.scss */
 #footer #questionNumber {
   float: right;
   margin: 0 40px 50px 0;

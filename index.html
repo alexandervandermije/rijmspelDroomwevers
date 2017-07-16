@@ -32,7 +32,10 @@
             <div id="dialog" ng-show="dialogActive == true">
                 <div id="foutDialog" ng-show="dialogState == 'wrongAnswer'">
                     <h2>Helaas, Dat klopt niet!</h2>
-                    <p>Het juiste antwoord is : {{game.questions[currentQuestion].question}}<span class="bold"> {{game.questions[currentQuestion].is}}</span> <span ng-show="questions[currentQuestion].een == 'true'">een</span><span class="bold"> {{game.questions[currentQuestion].correctAnswer}}</span>
+                    <p>Het juiste antwoord is : {{game.questions[currentQuestion].question}}
+                        <span class="bold"> {{game.questions[currentQuestion].is}}</span> 
+                        <span ng-show="questions[currentQuestion].een == 'true'">een</span>
+                        <span class="bold"> {{game.questions[currentQuestion].correctAnswer}}</span>
                     </p>
                     <button class="btn btn-success" ng-click="nextQuestion()">Ga verder</button>
                 </div>
