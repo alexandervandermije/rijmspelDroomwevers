@@ -112,7 +112,6 @@ gameApp.controller('MainController', function MainController($scope, $http) {
 								}
 							)
 					//location.reload();
-
 				}
 			}
 		}

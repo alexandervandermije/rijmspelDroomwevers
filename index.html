@@ -44,14 +44,18 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <p id="questionNumber">Vraag nummer: {{currentQuestion +1}}/{{totalQuestions}}</p>
                     <h2>{{game.questions[currentQuestion].question}}</h2>
                 </div>
             </div>
             <div id="isofnietRow" class="row">
                 <div class="col-sm-12">
-                    <button ng-class="{grayScale : isTrue == 'is niet' && isTrue != ''}" ng-click="isTrue = 'is'; isTrueorFalseFilledIn = true" class="btn btn-success isofnietButtons">IS<div class="extraWord" ng-show="game.questions[currentQuestion].een == 'true'">een</div></button>
-                    <button ng-class="{grayScale : isTrue == 'is' && isTrue != ''}" ng-click="isTrue = 'is niet'; isTrueorFalseFilledIn = true" class="btn btn-danger isofnietButtons">IS NIET<div class="extraWord" ng-show="game.questions[currentQuestion].een == 'true'">een</div></button>
+                    <button ng-class="{grayScale : isTrue == 'is niet' && isTrue != ''}" ng-click="isTrue = 'is'; isTrueorFalseFilledIn = true"        class="btn isofnietButtons">IS
+                            <div class="extraWord" ng-show="game.questions[currentQuestion].een == 'true'">een</div>
+                    </button>
+                    <p>of</p>
+                    <button ng-class="{grayScale : isTrue == 'is' && isTrue != ''}" ng-click="isTrue = 'is niet'; isTrueorFalseFilledIn = true"        class="btn isofnietButtons">IS NIET
+                        <div class="extraWord" ng-show="game.questions[currentQuestion].een == 'true'">een</div>
+                    </button>
                     <p ng-show="isTrueorFalseFilledIn == false">Vul eerst in of het is of is niet is!</p> 
                 </div>
             </div>
@@ -62,12 +66,12 @@
                     </div>
                 </div>
             </div>
-            <div id="menuRow" class="row">
+            <!-- <div id="menuRow" class="row">
                 <div class="col-sm-12">
                     <p id="score">Score: {{score}}</p>
                 </div>
             </div>
-            <div id="gameRulesRow">
+            <div id="gameRulesRow" class="row">
                 <h2>SpelRegels</h2>
                 <div class="col-sm-4 col-sm-offset-2">
                     <p>Lees de gegeven woord(en).Daarna kies je de  categorie ís'of 'is niet'.'Doelstelling is om het gegeven woord zo dichtbij mogelijk te matchen met het tegenovergestelde woord of het woord met dezelfde betekenis. Kies eerst of het hetzelfde is, of het tegenovergestelde.</p>
@@ -75,6 +79,12 @@
                 <div class="col-sm-4">
                     <p>Als je het juiste antwoord kiest, hoor je gejuich. Als je het verkeerde antwoord kiest, is er een afkeurende reactie. Het juiste antwoord heeft een relatie met het gegeven woord.
                     </p>
+                </div>
+            </div>
+            -->
+            <div id="footer" class="row">
+                <div class="col-sm-12">
+                    <p id="questionNumber">Vraag nummer: {{currentQuestion +1}}/{{totalQuestions}}</p>
                 </div>
             </div>
         </div>
