@@ -37,7 +37,7 @@
                         <span ng-show="questions[currentQuestion].een == 'true'">een</span>
                         <span class="bold"> {{game.questions[currentQuestion].correctAnswer}}</span>
                     </p>
-                    <button class="btn btn-success" ng-click="nextQuestion()">Ga verder</button>
+                    <button class="btn" ng-click="nextQuestion()">Ga verder</button>
                 </div>
                 <div id="endGameDialog" ng-show="dialogState == 'endGame'">
                     <h2>Einde van het spel!</h2>

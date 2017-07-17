@@ -44,7 +44,7 @@ p, button
 }
 #game
 {
-	margin-top:25px;
+	margin-top:75px;
 	text-align:center;
 }
 .grayScale
@@ -55,18 +55,19 @@ p, button
 }
 #dialog
 {
-	width: 50%;
-	height:45%;
+	width: 40%;
+	height:35%;
     background-color: white;
-    margin-left: 25%;
+    margin-left: 30%;
     position:absolute;
-    border-radius:5%;
-    color: black;
+    border-radius:5px;
+    color: $primaryTextColor;
     margin-right: auto;
     text-align: center;
     position: absolute;
     z-index: 1;
     border: 2px white solid;
+    box-shadow: 1px 1px 5px grey;
     
     h2
     {
@@ -82,7 +83,9 @@ p, button
     {
     	margin-top:8%;
     	font-size:1.5em;
-    	width:50%;
+    	width:35%;
+    	background-color:$primaryTextColor;
+    	color:white;
     }
 }
 #isofnietRow
@@ -194,5 +197,6 @@ form
 		margin:0 40px 50px 0;
 		color:white;
 		opacity:0.8;
+		font-size:24px;
 	}
 }
