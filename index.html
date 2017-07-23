@@ -16,7 +16,7 @@
             <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
         <![endif]-->
         <style>
-            @import url('https://fonts.googleapis.com/css?family=Fascinate+Inline|Iceland|Monoton|Press+Start+2P');
+            @import url('https://fonts.googleapis.com/css?family=Satisfy|Source+Serif+Pro');
         </style>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
@@ -25,7 +25,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                <h1>Het IS of IS NIET Spel</h1>
+                <img src="img/logo1.png" class="img-fluid" id="logo">
             </div>
         </div>
         <div id="game">
@@ -34,7 +34,7 @@
                     <h2>Helaas, Dat klopt niet!</h2>
                     <p>Het juiste antwoord is : {{game.questions[currentQuestion].question}}
                         <span class="bold"> {{game.questions[currentQuestion].is}}</span> 
-                        <span ng-show="questions[currentQuestion].een == 'true'">een</span>
+                        <span ng-show="game.questions[currentQuestion].een == true">een</span>
                         <span class="bold"> {{game.questions[currentQuestion].correctAnswer}}</span>
                     </p>
                     <button class="btn" ng-click="nextQuestion()">Ga verder</button>
@@ -42,7 +42,7 @@
                 <div id="endGameDialog" ng-show="dialogState == 'endGame'">
                     <h2>Einde van het spel!</h2>
                     <p>Je hebt het spel uitgespeeld, gefeliciteerd! Je hebt {{score}} punten verdiend!</p>
-                    <button class="btn btn-success" ng-click="restartGame()">Het spel nog een keer spelen?</button>
+                    <button class="btn" ng-click="restartGame()">Speel nog een keer!</button>
                 </div>
             </div>
             <div class="row">
@@ -53,11 +53,11 @@
             <div id="isofnietRow" class="row">
                 <div class="col-sm-12">
                     <button ng-class="{grayScale : isTrue == 'is niet' && isTrue != ''}" ng-click="isTrue = 'is'; isTrueorFalseFilledIn = true"        class="btn isofnietButtons">IS
-                            <div class="extraWord" ng-show="game.questions[currentQuestion].een == 'true'">een</div>
+                            <div class="extraWord" ng-show="game.questions[currentQuestion].een == true">een</div>
                     </button>
                     <p>of</p>
                     <button ng-class="{grayScale : isTrue == 'is' && isTrue != ''}" ng-click="isTrue = 'is niet'; isTrueorFalseFilledIn = true"        class="btn isofnietButtons">IS NIET
-                        <div class="extraWord" ng-show="game.questions[currentQuestion].een == 'true'">een</div>
+                        <div class="extraWord" ng-show="game.questions[currentQuestion].een == true">een</div>
                     </button>
                     <p ng-show="isTrueorFalseFilledIn == false">Vul eerst in of het is of is niet is!</p> 
                 </div>
@@ -87,7 +87,7 @@
             -->
             <div id="footer" class="row">
                 <div class="col-sm-12">
-                    <p id="questionNumber">Vraag nummer: {{currentQuestion +1}}/{{totalQuestions}}</p>
+                    <p id="questionNumber">Vraag: {{currentQuestion +1}}/{{totalQuestions}}</p>
                 </div>
             </div>
         </div>
