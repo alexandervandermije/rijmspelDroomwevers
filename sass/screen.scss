@@ -30,6 +30,22 @@ h2
 	text-align:center;
 	margin-top:10px;
 }
+#admin
+{
+	h2
+	{
+		margin-bottom:10px;
+	}
+	h3
+	{
+		font-size:18px;
+		font-family: $primaryFont;
+		text-align:center;
+		margin-top:10px;
+		margin-bottom:10px;
+	}
+}
+
 p, button
 {
 	font-family:$primaryFont;
@@ -175,6 +191,7 @@ form
 	{
 		height:28px;
 		margin-top:2px;
+		box-shadow:none;
 	}
 
 }

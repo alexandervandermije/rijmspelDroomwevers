@@ -22,17 +22,17 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     </head>
     <body ng-app="gameApp" ng-controller="MainController">
-    <div class="container-fluid">
-        <h1>Admin </h1>
+    <div id="admin" class="container-fluid">
+        <h2>Admin</h2>
         <div class="col-sm-4 col-sm-offset-4">
             <button ng-click="adminWindow = 'newQuestion'" class="btn btn-default">Voeg een nieuwe vraag toe!</button>
             <button ng-click="adminWindow = 'manageQuestions'" class="btn btn-default">Manage vragen</button>
         </div>
         <div ng-show="adminWindow == 'newQuestion'" class="col-sm-10 col-sm-offset-1">
-            <h2> Voeg een nieuwe vraag toe</h2>
+            <h3>Voeg een nieuwe vraag toe</h3>
             <form class="form-horizontal">
                 <div class="form-group">
-                    <h2>De Vraag</h2>
+                    <h3>De Vraag</h3>
                     <p class="warningText" ng-show="questionEmpty == true">Vul de vraag in!</p>
                     <label class="control-label col-sm-2" for="questionInput">Vraag</label>
                     <div class="col-sm-10">
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <h2>IS of IS NIET</h2>
+                    <h3>IS of IS NIET</h3>
                     <p class="warningText" ng-show="optionIsEmpty == true">Vul in of het is/is niet is</p>
                     <div class="col-sm-4 col-sm-offset-2">
                         <div class="radio-inline">
@@ -63,7 +63,7 @@
                     <label id="extraWordExplanation" class="control-label" for="extraWordInput">Voeg het woord een toe nà is of is niet. Bijvoorbeeld: Een meer is niet een Woestijn.</p>
                 </div>
                 <div class="form-group">
-                    <h2>Mogelijke antwoorden</h2>
+                    <h3>Mogelijke antwoorden</h3>
                     <p class="warningText" ng-show="answersEmpty == true">Vul alle antwoorden in!</p>
                     <label class="control-label col-sm-2" for="possibleAnswer1">Antwoord 1</label>
                     <div class="col-sm-3">
@@ -116,7 +116,7 @@
             </form>
         </div>
         <div class="col-sm-10 col-sm-offset-1" ng-show="adminWindow == 'manageQuestions'">
-            <h2>Manage Questions</h2>
+            <h3>Manage Questions</h3>
             <table class="table">
                 <thead>
                     <tr>
