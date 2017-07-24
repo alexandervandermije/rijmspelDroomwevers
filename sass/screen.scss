@@ -64,7 +64,7 @@ button
     right:0;
     margin-left: auto;
     margin-right: auto;
-    padding:0 20px 30px 20px;
+    padding:0 20px 20px 20px;
     position:absolute;
     border-radius:5px;
     color: $primaryTextColor;
@@ -75,17 +75,18 @@ button
     
     h2
     {
-    	font-size:3em;
+    	font-size:2em;
     	margin-top:5%;
     	margin-bottom:3%;
     }
     p
     {
-    	font-size:1.5em;
+    	margin-top:30px;
+    	font-size:1em;
     }
     button
     {
-    	margin-top:8%;
+    	margin-top:6%;
     	font-size:1.5em;
     	width:36%;
     }

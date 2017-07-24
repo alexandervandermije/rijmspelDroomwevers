@@ -130,7 +130,7 @@ button {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 20px 30px 20px;
+  padding: 0 20px 20px 20px;
   position: absolute;
   border-radius: 5px;
   color: #32477e;
@@ -141,26 +141,27 @@ button {
 }
 /* line 76, ../sass/screen.scss */
 #dialog h2 {
-  font-size: 3em;
+  font-size: 2em;
   margin-top: 5%;
   margin-bottom: 3%;
 }
 /* line 82, ../sass/screen.scss */
 #dialog p {
-  font-size: 1.5em;
+  margin-top: 30px;
+  font-size: 1em;
 }
-/* line 86, ../sass/screen.scss */
+/* line 87, ../sass/screen.scss */
 #dialog button {
-  margin-top: 8%;
+  margin-top: 6%;
   font-size: 1.5em;
   width: 36%;
 }
 
-/* line 93, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 #isofnietRow {
   margin-top: 50px;
 }
-/* line 96, ../sass/screen.scss */
+/* line 97, ../sass/screen.scss */
 #isofnietRow .isofnietButtons {
   width: 135px;
   height: 50px;
@@ -169,16 +170,16 @@ button {
   box-shadow: 1.5px 1.5px 10px grey;
   text-transform: lowercase;
 }
-/* line 104, ../sass/screen.scss */
+/* line 105, ../sass/screen.scss */
 #isofnietRow .isofnietButtons .extraWord {
   display: inline;
   margin-left: 4px;
 }
-/* line 110, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 #isofnietRow p {
   margin-top: 20px;
 }
-/* line 114, ../sass/screen.scss */
+/* line 115, ../sass/screen.scss */
 #isofnietRow p:first-of-type {
   display: inline;
   margin: 0 10px 0 10px;
@@ -186,21 +187,21 @@ button {
   font-size: 21px;
 }
 
-/* line 122, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 #possibleAnswersRow {
   margin-top: 30px;
 }
-/* line 126, ../sass/screen.scss */
+/* line 127, ../sass/screen.scss */
 #possibleAnswersRow .possibleAnswerDiv:first-of-type {
   margin-left: 0;
 }
-/* line 130, ../sass/screen.scss */
+/* line 131, ../sass/screen.scss */
 #possibleAnswersRow .possibleAnswerDiv {
   width: auto;
   display: inline;
   margin-left: 15px;
 }
-/* line 136, ../sass/screen.scss */
+/* line 137, ../sass/screen.scss */
 #possibleAnswersRow .possibleAnswerDiv .possibleAnswerButton {
   width: 125px;
   height: 50px;
@@ -210,28 +211,28 @@ button {
   box-shadow: 2px 2px 10px grey;
 }
 
-/* line 147, ../sass/screen.scss */
+/* line 148, ../sass/screen.scss */
 #score {
   margin-top: 2px;
   font-size: 28px;
 }
 
-/* line 152, ../sass/screen.scss */
+/* line 153, ../sass/screen.scss */
 #gameRulesRow {
   margin-top: 25px;
 }
-/* line 155, ../sass/screen.scss */
+/* line 156, ../sass/screen.scss */
 #gameRulesRow h2 {
   margin-bottom: 10px;
 }
 
-/* line 161, ../sass/screen.scss */
+/* line 162, ../sass/screen.scss */
 #footer {
   width: 100%;
   position: fixed;
   bottom: 0;
 }
-/* line 166, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 #footer #questionNumber {
   float: right;
   margin: 0 40px 50px 0;
@@ -241,11 +242,11 @@ button {
 }
 
 /* Admin Styling */
-/* line 178, ../sass/screen.scss */
+/* line 179, ../sass/screen.scss */
 #admin h2 {
   margin-bottom: 10px;
 }
-/* line 182, ../sass/screen.scss */
+/* line 183, ../sass/screen.scss */
 #admin h3 {
   font-size: 18px;
   font-family: "Futura Md BT";
@@ -254,26 +255,26 @@ button {
   margin-bottom: 10px;
 }
 
-/* line 194, ../sass/screen.scss */
+/* line 195, ../sass/screen.scss */
 form h2 {
   margin-bottom: 1%;
 }
-/* line 198, ../sass/screen.scss */
+/* line 199, ../sass/screen.scss */
 form button {
   float: right;
 }
-/* line 202, ../sass/screen.scss */
+/* line 203, ../sass/screen.scss */
 form #extraWordExplanation {
   float: right;
 }
-/* line 206, ../sass/screen.scss */
+/* line 207, ../sass/screen.scss */
 form #extraWordCheckbox {
   height: 28px;
   margin-top: 2px;
   box-shadow: none;
 }
 
-/* line 214, ../sass/screen.scss */
+/* line 215, ../sass/screen.scss */
 .warningText {
   color: red;
   text-align: center;
@@ -281,16 +282,16 @@ form #extraWordCheckbox {
   margin-top: 1%;
 }
 
-/* line 221, ../sass/screen.scss */
+/* line 222, ../sass/screen.scss */
 #manageQuestionsTable {
   font-size: 18px;
   text-align: center;
 }
-/* line 225, ../sass/screen.scss */
+/* line 226, ../sass/screen.scss */
 #manageQuestionsTable th {
   text-align: center;
 }
-/* line 229, ../sass/screen.scss */
+/* line 230, ../sass/screen.scss */
 #manageQuestionsTable td {
   border-top: 3px solid #ddd;
   text-align: center;
