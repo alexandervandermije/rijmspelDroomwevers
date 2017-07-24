@@ -29,7 +29,6 @@ gameApp.controller('MainController', function MainController($scope, $http) {
 		{question:"Laag", possibleAnswers:["oog", "hoog", "boog","droog"], is:'is niet', correctAnswer:"hoog", een:false},
 		{question:"Hersens", possibleAnswers:["trein", "plein", "brein","rein"], is:'is', correctAnswer:"brein", een:false},
 		{question:"Groot", possibleAnswers:["klein", "lijn", "pijn","mijn"], is:'is niet', correctAnswer:"klein", een:false},
-		{question:"Een meer", possibleAnswers:["tonijn", "zelfbewustzijn", "welzijn","woestijn"], is:'is niet', correctAnswer:"woestijn", een:true},
 		{question:"Een cirkel", possibleAnswers:["lijn", "plein", "trein","mijn"], is:'is niet', correctAnswer:"lijn", een:false},
 		{question:"Een grapje", possibleAnswers:["gein", "gordijn", "fontein","terrein"], is:'is', correctAnswer:"gein", een:true},
 		{question:"Onweer", possibleAnswers:["weer", "meneer", "verkeer","studeer"], is:'is', correctAnswer:"weer", een:false},
