@@ -35,6 +35,11 @@ p, button
 	font-family:$primaryFont;
 	font-size:18px;
 }
+button
+{
+	background-color:$primaryTextColor;
+    color:white;
+}
 .bold
 {
 	font-weight:bold;
@@ -83,8 +88,6 @@ p, button
     	margin-top:8%;
     	font-size:1.5em;
     	width:36%;
-    	background-color:$primaryTextColor;
-    	color:white;
     }
 }
 #isofnietRow
@@ -95,8 +98,6 @@ p, button
 		width:135px;
 		height:50px;
 		font-size:21px;
-		color:white;
-		background-color:$primaryTextColor;
 		border-radius:5px;
 		box-shadow: 1.5px 1.5px 10px grey;
 		text-transform:lowercase;
