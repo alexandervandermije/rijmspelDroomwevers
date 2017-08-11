@@ -241,12 +241,27 @@ button {
   font-size: 18px;
 }
 
+@media (max-width: 600px) {
+  /* line 179, ../sass/screen.scss */
+  #possibleAnswersRow {
+    margin-left: -32px;
+  }
+  /* line 184, ../sass/screen.scss */
+  #possibleAnswersRow .possibleAnswerDiv .possibleAnswerButton {
+    width: 180px;
+    margin-top: 10px;
+  }
+  /* line 190, ../sass/screen.scss */
+  #possibleAnswersRow .possibleAnswerDiv:first-of-type {
+    margin-left: 15px;
+  }
+}
 /* Admin Styling */
-/* line 179, ../sass/screen.scss */
+/* line 200, ../sass/screen.scss */
 #admin h2 {
   margin-bottom: 10px;
 }
-/* line 183, ../sass/screen.scss */
+/* line 204, ../sass/screen.scss */
 #admin h3 {
   font-size: 18px;
   font-family: "Futura Md BT";
@@ -255,26 +270,26 @@ button {
   margin-bottom: 10px;
 }
 
-/* line 195, ../sass/screen.scss */
+/* line 216, ../sass/screen.scss */
 form h2 {
   margin-bottom: 1%;
 }
-/* line 199, ../sass/screen.scss */
+/* line 220, ../sass/screen.scss */
 form button {
   float: right;
 }
-/* line 203, ../sass/screen.scss */
+/* line 224, ../sass/screen.scss */
 form #extraWordExplanation {
   float: right;
 }
-/* line 207, ../sass/screen.scss */
+/* line 228, ../sass/screen.scss */
 form #extraWordCheckbox {
   height: 28px;
   margin-top: 2px;
   box-shadow: none;
 }
 
-/* line 215, ../sass/screen.scss */
+/* line 236, ../sass/screen.scss */
 .warningText {
   color: red;
   text-align: center;
@@ -282,17 +297,17 @@ form #extraWordCheckbox {
   margin-top: 1%;
 }
 
-/* line 222, ../sass/screen.scss */
+/* line 243, ../sass/screen.scss */
 #manageQuestionsTable {
   font-size: 18px;
   text-align: center;
 }
-/* line 226, ../sass/screen.scss */
+/* line 247, ../sass/screen.scss */
 #manageQuestionsTable th {
   text-align: center;
   font-weight: bold;
 }
-/* line 231, ../sass/screen.scss */
+/* line 252, ../sass/screen.scss */
 #manageQuestionsTable td {
   border-top: 3px solid #ddd;
   text-align: center;

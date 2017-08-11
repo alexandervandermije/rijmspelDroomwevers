@@ -173,6 +173,27 @@ button
 		font-size:18px;
 	}
 }
+
+@media (max-width:600px)
+{
+	#possibleAnswersRow
+	{
+		margin-left:-32px;	
+		.possibleAnswerDiv
+		{
+			.possibleAnswerButton
+			{
+				width:180px;
+				margin-top:10px;
+			}	
+		}
+		.possibleAnswerDiv:first-of-type
+		{
+			margin-left:15px;
+		}
+
+	}
+}
 /* Admin Styling */
 #admin
 {
