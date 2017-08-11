@@ -256,12 +256,35 @@ button {
     margin-left: 15px;
   }
 }
+@media (max-width: 400px) {
+  /* line 199, ../sass/screen.scss */
+  #possibleAnswersRow {
+    margin-left: -32px;
+  }
+  /* line 204, ../sass/screen.scss */
+  #possibleAnswersRow .possibleAnswerDiv .possibleAnswerButton {
+    width: 250px;
+    margin-top: 10px;
+  }
+
+  /* line 211, ../sass/screen.scss */
+  #isofnietRow p:first-of-type {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  /* line 219, ../sass/screen.scss */
+  #isofnietRow .isofnietButtons {
+    width: 250px;
+  }
+}
 /* Admin Styling */
-/* line 200, ../sass/screen.scss */
+/* line 228, ../sass/screen.scss */
 #admin h2 {
   margin-bottom: 10px;
 }
-/* line 204, ../sass/screen.scss */
+/* line 232, ../sass/screen.scss */
 #admin h3 {
   font-size: 18px;
   font-family: "Futura Md BT";
@@ -270,26 +293,26 @@ button {
   margin-bottom: 10px;
 }
 
-/* line 216, ../sass/screen.scss */
+/* line 244, ../sass/screen.scss */
 form h2 {
   margin-bottom: 1%;
 }
-/* line 220, ../sass/screen.scss */
+/* line 248, ../sass/screen.scss */
 form button {
   float: right;
 }
-/* line 224, ../sass/screen.scss */
+/* line 252, ../sass/screen.scss */
 form #extraWordExplanation {
   float: right;
 }
-/* line 228, ../sass/screen.scss */
+/* line 256, ../sass/screen.scss */
 form #extraWordCheckbox {
   height: 28px;
   margin-top: 2px;
   box-shadow: none;
 }
 
-/* line 236, ../sass/screen.scss */
+/* line 264, ../sass/screen.scss */
 .warningText {
   color: red;
   text-align: center;
@@ -297,17 +320,17 @@ form #extraWordCheckbox {
   margin-top: 1%;
 }
 
-/* line 243, ../sass/screen.scss */
+/* line 271, ../sass/screen.scss */
 #manageQuestionsTable {
   font-size: 18px;
   text-align: center;
 }
-/* line 247, ../sass/screen.scss */
+/* line 275, ../sass/screen.scss */
 #manageQuestionsTable th {
   text-align: center;
   font-weight: bold;
 }
-/* line 252, ../sass/screen.scss */
+/* line 280, ../sass/screen.scss */
 #manageQuestionsTable td {
   border-top: 3px solid #ddd;
   text-align: center;

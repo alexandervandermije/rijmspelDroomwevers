@@ -194,6 +194,34 @@ button
 
 	}
 }
+@media (max-width:400px)
+{
+	#possibleAnswersRow
+	{
+		margin-left:-32px;	
+		.possibleAnswerDiv
+		{
+			.possibleAnswerButton
+			{
+				width:250px;
+				margin-top:10px;
+			}	
+		}
+	}
+	#isofnietRow p:first-of-type
+	{
+		display:block;
+		margin-top:5px;
+		margin-bottom:10px;
+	}
+	#isofnietRow
+	{
+		.isofnietButtons
+		{
+			width:250px;
+		}
+	}
+}
 /* Admin Styling */
 #admin
 {
