@@ -290,8 +290,9 @@ form #extraWordCheckbox {
 /* line 226, ../sass/screen.scss */
 #manageQuestionsTable th {
   text-align: center;
+  font-weight: bold;
 }
-/* line 230, ../sass/screen.scss */
+/* line 231, ../sass/screen.scss */
 #manageQuestionsTable td {
   border-top: 3px solid #ddd;
   text-align: center;

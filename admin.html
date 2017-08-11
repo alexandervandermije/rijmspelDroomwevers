@@ -117,7 +117,7 @@
         </div>
         <div class="col-sm-10 col-sm-offset-1" ng-show="adminWindow == 'manageQuestions'">
             <h3>Manage Questions</h3>
-            <table id="manageQuestionsTable" class="table">
+            <table id="manageQuestionsTable" class="table table-striped">
                 <thead>
                     <tr>
                         <th>id</th>
@@ -141,7 +141,7 @@
                         <td>{{questionData.possibleAnswers[2]}}</td>
                         <td>{{questionData.possibleAnswers[3]}}</td>
                         <td>{{questionData.correctAnswer}}</td>
-                        <td><button class="btn btn-danger" ng-click="deleteQuestion(this)">Verwijder vraag?</button></td>
+                        <td><button class="btn" ng-click="deleteQuestion(this)">Verwijder vraag?</button></td>
                     </tr>
                 </tbody>
             </table>
