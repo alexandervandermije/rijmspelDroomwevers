@@ -264,27 +264,28 @@ button {
   /* line 203, ../sass/screen.scss */
   #possibleAnswersRow .possibleAnswerDiv .possibleAnswerButton {
     width: 250px;
-    margin-top: 10px;
+    margin-top: 0px;
+    margin-bottom: 10px;
   }
 
-  /* line 210, ../sass/screen.scss */
+  /* line 211, ../sass/screen.scss */
   #isofnietRow p:first-of-type {
     display: block;
     margin-top: 5px;
     margin-bottom: 10px;
   }
 
-  /* line 218, ../sass/screen.scss */
+  /* line 219, ../sass/screen.scss */
   #isofnietRow .isofnietButtons {
     width: 250px;
   }
 
-  /* line 223, ../sass/screen.scss */
+  /* line 224, ../sass/screen.scss */
   #footer {
     top: 160px;
     position: absolute;
   }
-  /* line 227, ../sass/screen.scss */
+  /* line 228, ../sass/screen.scss */
   #footer #questionNumber {
     float: none;
     margin: 0;
@@ -292,11 +293,11 @@ button {
   }
 }
 /* Admin Styling */
-/* line 238, ../sass/screen.scss */
+/* line 239, ../sass/screen.scss */
 #admin h2 {
   margin-bottom: 10px;
 }
-/* line 242, ../sass/screen.scss */
+/* line 243, ../sass/screen.scss */
 #admin h3 {
   font-size: 18px;
   font-family: "Futura Md BT";
@@ -305,26 +306,26 @@ button {
   margin-bottom: 10px;
 }
 
-/* line 254, ../sass/screen.scss */
+/* line 255, ../sass/screen.scss */
 form h2 {
   margin-bottom: 1%;
 }
-/* line 258, ../sass/screen.scss */
+/* line 259, ../sass/screen.scss */
 form button {
   float: right;
 }
-/* line 262, ../sass/screen.scss */
+/* line 263, ../sass/screen.scss */
 form #extraWordExplanation {
   float: right;
 }
-/* line 266, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 form #extraWordCheckbox {
   height: 28px;
   margin-top: 2px;
   box-shadow: none;
 }
 
-/* line 274, ../sass/screen.scss */
+/* line 275, ../sass/screen.scss */
 .warningText {
   color: red;
   text-align: center;
@@ -332,17 +333,17 @@ form #extraWordCheckbox {
   margin-top: 1%;
 }
 
-/* line 281, ../sass/screen.scss */
+/* line 282, ../sass/screen.scss */
 #manageQuestionsTable {
   font-size: 18px;
   text-align: center;
 }
-/* line 285, ../sass/screen.scss */
+/* line 286, ../sass/screen.scss */
 #manageQuestionsTable th {
   text-align: center;
   font-weight: bold;
 }
-/* line 290, ../sass/screen.scss */
+/* line 291, ../sass/screen.scss */
 #manageQuestionsTable td {
   border-top: 3px solid #ddd;
   text-align: center;
