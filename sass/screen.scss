@@ -18,7 +18,7 @@ body
 #logo
 {
 	display:block;
-	width:15%;
+	width:250px;
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:15px;
@@ -191,7 +191,6 @@ button
 		{
 			margin-left:15px;
 		}
-
 	}
 }
 @media (max-width:400px)
@@ -219,6 +218,17 @@ button
 		.isofnietButtons
 		{
 			width:250px;
+		}
+	}
+	#footer
+	{
+		top:160px;
+		position:absolute;
+		#questionNumber
+		{
+			float:none;
+			margin:0;
+			font-size:21px;
 		}
 	}
 }
