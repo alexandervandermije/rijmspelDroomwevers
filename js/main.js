@@ -58,6 +58,7 @@ gameApp.controller('MainController', function MainController($scope, $http) {
 	$scope.dialogState = '';
 
 	$scope.adminWindow = 'manageQuestions'; 
+	
 	// Main game Variables
 	$scope.currentQuestion = 0;
 	$scope.isTrue = '';
@@ -170,13 +171,16 @@ gameApp.controller('MainController', function MainController($scope, $http) {
 	}
 	$scope.checkAnswer = function(chosenAnswer)
 	{
+		if($scope.dialogActive == true)
+		{
+			return;
+		}
 		if($scope.isTrue != '')
 		{
 			if($scope.isTrue == $scope.game.questions[$scope.currentQuestion].is && $scope.isTrue != '')
 			{
 				if(chosenAnswer.possibleAnswer == $scope.game.questions[$scope.currentQuestion].correctAnswer)
 				{
-					console.log("vraag correct beantwoord!");
 					succesAudio.play();
 					$scope.score++;
 					$scope.nextQuestion();
