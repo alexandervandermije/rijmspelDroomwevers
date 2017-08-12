@@ -174,8 +174,29 @@ button
 	}
 }
 
-@media (max-width:600px)
+@media (max-width:700px)
 {
+	#dialog
+	{
+		width: auto;
+	    h2
+	    {
+	    	font-size:2em;
+	    	margin-top:5%;
+	    	margin-bottom:3%;
+	    }
+	    p
+	    {
+	    	margin-top:30px;
+	    	font-size:1em;
+	    }
+	    button
+	    {
+	    	margin-top:6%;
+	    	font-size:1.5em;
+	    	width:auto;
+	    }
+	}
 	#possibleAnswersRow
 	{
 		margin-left:-32px;	
@@ -183,7 +204,7 @@ button
 		{
 			.possibleAnswerButton
 			{
-				width:180px;
+				width:210px;
 				margin-top:10px;
 			}	
 		}
@@ -192,12 +213,23 @@ button
 			margin-left:15px;
 		}
 	}
+	#footer
+	{
+		top:160px;
+		position:absolute;
+		z-index:-1;
+		#questionNumber
+		{
+			float:none;
+			margin:0;
+			font-size:21px;
+		}
+	}
 }
 @media (max-width:400px)
 {
 	#possibleAnswersRow
 	{
-		margin-left:-32px;	
 		.possibleAnswerDiv
 		{
 			.possibleAnswerButton
@@ -221,19 +253,10 @@ button
 			width:250px;
 		}
 	}
-	#footer
-	{
-		top:160px;
-		position:absolute;
-		#questionNumber
-		{
-			float:none;
-			margin:0;
-			font-size:21px;
-		}
-	}
 }
+
 /* Admin Styling */
+
 #admin
 {
 	h2
