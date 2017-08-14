@@ -8,10 +8,10 @@ $SendPossibleAnswer3 = $_POST['possibleAnswer3'];
 $SendPossibleAnswer4 = $_POST['possibleAnswer4'];
 $SendCorrectAnswer = $_POST['correctAnswer'];
 
+echo $SendQuestion;
 
 include "connection.php";
 
-$query = mysqli_query($connection,"insert into rijmspelquestions(question, answer1, answer2, answer3, answer4, correctAnswer,optionIs, een) values ('$SendQuestion', '$SendPossibleAnswer1','$SendPossibleAnswer2','$SendPossibleAnswer3','$SendPossibleAnswer4','$SendCorrectAnswer','$SendOptionIs','$SendExtraWord' )"); 
-	echo "Form Submitted succesfully";
+$query = mysqli_query($connection,"INSERT INTO rijmspelquestions(question, answer1, answer2, answer3, answer4, correctAnswer,optionIs, een) VALUES ('$SendQuestion', '$SendPossibleAnswer1','$SendPossibleAnswer2','$SendPossibleAnswer3','$SendPossibleAnswer4','$SendCorrectAnswer','$SendOptionIs','$SendExtraWord' )"); 
 mysqli_close($connection);
 ?>
