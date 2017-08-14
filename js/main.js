@@ -88,19 +88,7 @@ gameApp.controller('MainController', function MainController($scope, $http) {
 			else
 			{
 				$scope.optionIsEmpty = false;
-				if(typeof $scope.newQuestion.possibleAnswer1 == 'undefined')
-				{
-					$scope.answersEmpty = true;
-				}
-				else if(typeof $scope.newQuestion.possibleAnswer2 == 'undefined')
-				{
-					$scope.answersEmpty = true;
-				}
-				else if(typeof $scope.newQuestion.possibleAnswer3 == 'undefined')
-				{
-					$scope.answersEmpty = true;
-				}
-				else if(typeof $scope.newQuestion.possibleAnswer4 == 'undefined')
+				if(typeof $scope.newQuestion.possibleAnswer1 == 'undefined' || typeof $scope.newQuestion.possibleAnswer2 == 'undefined' || typeof $scope.newQuestion.possibleAnswer3 == 'undefined' || typeof $scope.newQuestion.possibleAnswer4 == 'undefined')
 				{
 					$scope.answersEmpty = true;
 				}
