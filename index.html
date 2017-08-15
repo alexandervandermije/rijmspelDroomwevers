@@ -34,7 +34,7 @@
                     <h2>Helaas, Dat klopt niet!</h2>
                     <p>Het juiste antwoord is : {{game.questions[currentQuestion].question}}
                         <span class="bold"> {{game.questions[currentQuestion].is}}</span> 
-                        <span ng-show="game.questions[currentQuestion].een == true">een</span>
+                        <span ng-show="game.questions[currentQuestion].een == 'true'">een</span>
                         <span class="bold"> {{game.questions[currentQuestion].correctAnswer}}</span>
                     </p>
                     <button class="btn" ng-click="nextQuestion()">Ga verder</button>
@@ -52,10 +52,10 @@
             </div>
             <div id="isofnietRow" class="row">
                 <div class="col-sm-12">
-                    <button ng-class="{grayScale : isTrue == 'is niet' && isTrue != ''}" ng-click="isTrue = 'is'; isTrueorFalseFilledIn = true"        class="btn isofnietButtons">IS<div class="extraWord" ng-show="game.questions[currentQuestion].een == true">een</div>
+                    <button ng-class="{grayScale : isTrue == 'is niet' && isTrue != ''}" ng-click="isTrue = 'is'; isTrueorFalseFilledIn = true"        class="btn isofnietButtons">IS<div class="extraWord" ng-show="game.questions[currentQuestion].een == 'true'">een</div>
                     </button>
                     <p>of</p>
-                    <button ng-class="{grayScale : isTrue == 'is' && isTrue != ''}" ng-click="isTrue = 'is niet'; isTrueorFalseFilledIn = true" class="btn isofnietButtons">IS NIET<div class="extraWord" ng-show="game.questions[currentQuestion].een == true">een</div>
+                    <button ng-class="{grayScale : isTrue == 'is' && isTrue != ''}" ng-click="isTrue = 'is niet'; isTrueorFalseFilledIn = true" class="btn isofnietButtons">IS NIET<div class="extraWord" ng-show="game.questions[currentQuestion].een == 'true'">een</div>
                     </button>
                     <p ng-show="isTrueorFalseFilledIn == false">Vul eerst in of het is of is niet is!</p> 
                 </div>

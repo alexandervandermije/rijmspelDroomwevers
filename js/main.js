@@ -19,7 +19,6 @@ gameApp.controller('MainController', function MainController($scope, $http) {
 				$scope.totalQuestions++;
 			}
 		})
-
 	// Input Form & = Form validation variables
 	$scope.newQuestion = '';
 	$scope.optionIsEmpty = false;
