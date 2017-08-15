@@ -1,0 +1,5 @@
+AuthUserFile /public/sites/www.alexandervandermije.nl/droomwevers/test/admin/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Login"
+AuthType Basic
+require valid-user

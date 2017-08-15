@@ -1,0 +1,158 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+        
+        <link href="../stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <link href="../stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+        <!--[if IE]>
+            <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <![endif]-->
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Fascinate+Inline|Iceland|Monoton|Press+Start+2P');
+        </style>
+        <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    </head>
+    <body ng-app="gameApp" ng-controller="MainController">
+    <div id="admin" class="container-fluid">
+        <h2>Admin</h2>
+        <div class="col-sm-4 col-sm-offset-4">
+            <button ng-click="adminWindow = 'newQuestion'" class="btn">Voeg een nieuwe vraag toe!</button>
+            <button ng-click="adminWindow = 'manageQuestions'" class="btn">Manage vragen</button>
+        </div>
+        <div ng-show="adminWindow == 'newQuestion'" class="col-sm-10 col-sm-offset-1">
+            <h3>Voeg een nieuwe vraag toe</h3>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <h3>De Vraag</h3>
+                    <p class="warningText" ng-show="questionEmpty == true">Vul de vraag in!</p>
+                    <label class="control-label col-sm-2" for="questionInput">Vraag</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="questionInput" ng-model="newQuestion.question">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h3>IS of IS NIET</h3>
+                    <p class="warningText" ng-show="optionIsEmpty == true">Vul in of het is/is niet is</p>
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <div class="radio-inline">
+                            <label>
+                                <input name="isOfisnietOptions" type="radio" id="optionIs" ng-value="'is'" ng-checked="newQuestion.optionIs == 'is'" ng-model="newQuestion.optionIs">
+                                IS
+                            </label>
+                        </div>
+                        <div class="radio-inline">
+                            <label>
+                                <input name="isOfisnietOptions" type="radio" id="optionIsNiet" ng-value="'is niet'" ng-checked="newQuestion.optionIs == 'is niet'" ng-model="newQuestion.optionIs">
+                                IS NIET
+                            </label>
+                        </div>
+                    </div>
+                    <label class="control-label col-sm-2" for="extraWordInput">Een toevoegen?</label>
+                    <div class="col-sm-4">
+                        <input id='extraWordCheckbox' type="checkbox" class="form-control" ng-true-value="true" ng-false-value="false" id="extraWordInput" ng-model="newQuestion.extraWord">
+                    </div>
+                    <label id="extraWordExplanation" class="control-label" for="extraWordInput">Voeg het woord een toe nà is of is niet. Bijvoorbeeld: Een meer is niet een Woestijn.</p>
+                </div>
+                <div class="form-group">
+                    <h3>Mogelijke antwoorden</h3>
+                    <p class="warningText" ng-show="answersEmpty == true">Vul alle antwoorden in!</p>
+                    <label class="control-label col-sm-2" for="possibleAnswer1">Antwoord 1</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="possibleAnswer1" ng-model="newQuestion.possibleAnswer1">
+                    </div>
+                    <div class="radio col-sm-1">
+                        <label>
+                            <input name='correctAnswerOptions' type="radio" ng-value="newQuestion.possibleAnswer1" ng-checked="newQuestion.correctAnswer == newQuestion.possibleAnswer1" ng-model="newQuestion.correctAnswer">
+                            Correct antwoord?
+                        </label>
+                    </div>
+
+                    <label class="control-label col-sm-2" for="possibleAnswer2">Antwoord 2</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="possibleAnswer2" ng-model="newQuestion.possibleAnswer2">
+                    </div>
+                    <div class="radio col-sm-1">
+                        <label>
+                            <input name='correctAnswerOptions' type="radio" ng-value="newQuestion.possibleAnswer2" ng-checked="newQuestion.correctAnswer == newQuestion.possibleAnswer2 " ng-model="newQuestion.correctAnswer">
+                            Correct antwoord?
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="possibleAnswer3">Antwoord 3</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="possibleAnswer3" ng-model="newQuestion.possibleAnswer3">
+                    </div>
+                    <div class="radio col-sm-1">
+                        <label>
+                            <input name='correctAnswerOptions' type="radio" ng-value="newQuestion.possibleAnswer3" ng-checked="newQuestion.correctAnswer == newQuestion.possibleAnswer3" ng-model="newQuestion.correctAnswer">
+                            Correct antwoord?
+                        </label>
+                    </div>
+
+                    <label class="control-label col-sm-2" for="possibleAnswer4">Antwoord 4</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="possibleAnswer4" ng-model="newQuestion.possibleAnswer4">
+                    </div>
+                    <div class="radio col-sm-1">
+                        <label>
+                            <input name='correctAnswerOptions' type="radio" ng-value="newQuestion.possibleAnswer4" ng-checked="newQuestion.correctAnswer == newQuestion.possibleAnswer4" ng-model="newQuestion.correctAnswer">
+                            Correct antwoord?
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button id="newQuestionButton" ng-click="enterNewQuestion()" type="submit" class="btn btn-default">Voeg nieuwe vraag toe</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-10 col-sm-offset-1" ng-show="adminWindow == 'manageQuestions'">
+            <h3>Manage Questions</h3>
+            <table id="manageQuestionsTable" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Vraag</th>
+                        <th>Is/is niet</th>
+                        <th>Antwoord 1</th>
+                        <th>Antwoord 2</th>
+                        <th>Antwoord 3</th>
+                        <th>Antwoord 4</th>
+                        <th>Correct antwoord</th>
+                        <th>Verwijder</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="questionData in game.questions">
+                        <td>{{questionData.id}}</td>
+                        <td>{{questionData.question}}</td>
+                        <td>{{questionData.is}}</td>
+                        <td>{{questionData.possibleAnswers[0]}}</td>
+                        <td>{{questionData.possibleAnswers[1]}}</td>
+                        <td>{{questionData.possibleAnswers[2]}}</td>
+                        <td>{{questionData.possibleAnswers[3]}}</td>
+                        <td>{{questionData.correctAnswer}}</td>
+                        <td><button class="btn" ng-click="deleteQuestion(this)">Verwijder vraag?</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="../js/vendor/bootstrap.min.js"></script>
+
+        <script src="../js/main.js"></script>
+    </body>
+</html>
