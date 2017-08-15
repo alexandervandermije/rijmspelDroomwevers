@@ -19,17 +19,10 @@ gameApp.controller('MainController', function MainController($scope, $http) {
 				$scope.totalQuestions++;
 			}
 		})
-	// Input Form & = Form validation variables
-	$scope.newQuestion = '';
-	$scope.optionIsEmpty = false;
-	$scope.answersEmpty = false;
-	$scope.questionEmpty = false;
-
+	
 	// Dialog window variables
 	$scope.dialogActive = false;
 	$scope.dialogState = '';
-
-	$scope.adminWindow = 'manageQuestions'; 
 	
 	// Main game Variables
 	$scope.currentQuestion = 0;
@@ -43,92 +36,6 @@ gameApp.controller('MainController', function MainController($scope, $http) {
 	var foutAudio = new Audio("sound/kidsAww.mp3");
 	foutAudio.volume = 0.1;
 
-	$scope.enterNewQuestion = function()
-	{
-		console.log($scope.newQuestion);
-		if(typeof $scope.newQuestion.question == 'undefined')
-		{
-			$scope.questionEmpty = true;
-		}
-		else
-		{
-			$scope.questionEmpty = false;
-			if(typeof $scope.newQuestion.optionIs == 'undefined')
-			{
-				$scope.optionIsEmpty = true;
-			}
-			else
-			{
-				$scope.optionIsEmpty = false;
-				if(typeof $scope.newQuestion.possibleAnswer1 == 'undefined' || typeof $scope.newQuestion.possibleAnswer2 == 'undefined' || typeof $scope.newQuestion.possibleAnswer3 == 'undefined' || typeof $scope.newQuestion.possibleAnswer4 == 'undefined')
-				{
-					$scope.answersEmpty = true;
-				}
-				else
-				{
-					if(typeof $scope.newQuestion.extraWord == 'undefined')
-					{
-						$scope.newQuestion.extraWord = false;
-					}
-					$scope.answersEmpty = false;
-				
-					var config = 
-					{
-			            headers : {
-			                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-			            }
-			        }
-					var data = $.param({
-			                question:$scope.newQuestion.question,
-			                optionIs:$scope.newQuestion.optionIs,
-			                extraWord:$scope.newQuestion.extraWord,
-			                possibleAnswer1:$scope.newQuestion.possibleAnswer1,
-			                possibleAnswer2:$scope.newQuestion.possibleAnswer2,
-			                possibleAnswer3:$scope.newQuestion.possibleAnswer3,
-			                possibleAnswer4:$scope.newQuestion.possibleAnswer4,
-			                correctAnswer:$scope.newQuestion.correctAnswer
-			            });
-					$http.post("postQuestion.php",data, config)
-						.then(
-								function(response)
-								{
-									console.log('succes!');
-								},
-								function(response)
-								{
-									console.log('failure');
-								}
-							)
-					location.reload();
-				}
-			}
-		}
-	}
-	$scope.deleteQuestion = function(question)
-	{
-		var config = 
-		{
-            headers : {
-                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-            }
-        }
-		var data = $.param({
-                deleteID: question.questionData.id
-            });
-		$http.post("deleteQuestion.php",data, config)
-			.then(
-					function(response)
-					{
-						console.log('succes!');
-					},
-					function(response)
-					{
-						console.log('failure');
-					}
-				)
-
-		location.reload();
-	}
 	$scope.checkAnswer = function(chosenAnswer)
 	{
 		if($scope.dialogActive == true)
