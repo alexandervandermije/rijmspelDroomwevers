@@ -100,7 +100,7 @@ gameApp.controller('MainController', function MainController($scope, $http) {
 									console.log('failure');
 								}
 							)
-					//location.reload();
+					location.reload();
 				}
 			}
 		}
