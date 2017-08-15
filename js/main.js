@@ -3,49 +3,22 @@ gameApp.controller('MainController', function MainController($scope, $http) {
 
 	$scope.totalQuestions = 0;
 	$scope.game = this;
-	// $scope.game.questions = [];
-	// $http.get('getQuestions.php')
-	// 	.then(function(result)
-	// 	{
-	// 		for(var i in result.data)
-	// 		{
-	// 			$scope.game.questions[i] = {};
-	// 			$scope.game.questions[i].id = result.data[i][0];
-	// 			$scope.game.questions[i].question = result.data[i][1];
-	// 			$scope.game.questions[i].is = result.data[i][2];
-	// 			$scope.game.questions[i].possibleAnswers = [result.data[i][3],result.data[i][4],result.data[i][5],result.data[i][6]];
-	// 			$scope.game.questions[i].correctAnswer = result.data[i][7];
-	// 			$scope.game.questions[i].een = result.data[i][8];
-	// 			$scope.totalQuestions++;
-	// 		}
-	// 	})
-
-	// Temporary Local questions
-	
-	$scope.game.questions = [
-		{question:"Omlaag", possibleAnswers:["bewoog", "proloog", "verhoog","omhoog"], is:'is niet', correctAnswer:"omhoog", een:false},
-		{question:"In het midden",possibleAnswers:["egaal", "fataal", "ideaal", "centraal"],is:'is',correctAnswer:"centraal", een: false},
-		{question:"Een oor", possibleAnswers:["loog","zoog","boog","oog"], is:'is niet',correctAnswer:"oog",een:true},
-		{question:"Snel", possibleAnswers:["vandaag","maag","traag","vraag"], is:'is niet', correctAnswer:"traag", een: false},
-		{question:"Een stuur", possibleAnswers:["signaal", "spiraal", "pedaal","metaal"], is:'is niet', correctAnswer:"pedaal", een:true},
-		{question:"Laag", possibleAnswers:["oog", "hoog", "boog","droog"], is:'is niet', correctAnswer:"hoog", een:false},
-		{question:"Een kamer", possibleAnswers:["taal", "schaal", "zaal","kaal"], is:'is niet', correctAnswer:"zaal", een:true},
-		{question:"Hersens", possibleAnswers:["trein", "plein", "brein","rein"], is:'is', correctAnswer:"brein", een:false},
-		{question:"Groot", possibleAnswers:["klein", "lijn", "pijn","mijn"], is:'is niet', correctAnswer:"klein", een:false},
-		{question:"Een cirkel", possibleAnswers:["lijn", "plein", "trein","mijn"], is:'is niet', correctAnswer:"lijn", een:true},
-		{question:"Een grapje", possibleAnswers:["gein", "gordijn", "fontein","terrein"], is:'is', correctAnswer:"gein", een:true},
-		{question:"Onweer", possibleAnswers:["weer", "meneer", "verkeer","studeer"], is:'is', correctAnswer:"weer", een:false},
-		{question:"Een vogel", possibleAnswers:["beer", "meer", "speer","probeer"], is:'is niet', correctAnswer:"beer", een:true},
-		{question:"Pijnlijk", possibleAnswers:["zeer", "meer", "neer","ongeveer"], is:'is', correctAnswer:"zeer", een:false},
-		{question:"Noord", possibleAnswers:["zuid", "kruid", "vanuit","spruit"], is:'is niet', correctAnswer:"zuid", een:false},
-		{question:"Een appel", possibleAnswers:["peer", "veer", "leer","heer"], is:'is niet', correctAnswer:"peer", een:true},
-		{question:"Vruchten", possibleAnswers:["uit", "huid", "kruid","fruit"], is:'is', correctAnswer:"fruit", een:false},
-		{question:"Een pijl", possibleAnswers:["droog", "boog", "zoog","woog"], is:'is niet', correctAnswer:"boog", een:true},
-		{question:"Een klank", possibleAnswers:["geluid", "luid", "luit","hooguit"], is:'is', correctAnswer:"geluid", een:true},
-		{question:"Nat", possibleAnswers:["droog", "hoog", "boog","omhoog"], is:'is niet', correctAnswer:"droog", een:false}
-	];
-
-	$scope.totalQuestions = $scope.game.questions.length;
+	$scope.game.questions = [];
+	$http.get('getQuestions.php')
+		.then(function(result)
+		{
+			for(var i in result.data)
+			{
+				$scope.game.questions[i] = {};
+				$scope.game.questions[i].id = result.data[i][0];
+				$scope.game.questions[i].question = result.data[i][1];
+				$scope.game.questions[i].is = result.data[i][2];
+				$scope.game.questions[i].possibleAnswers = [result.data[i][3],result.data[i][4],result.data[i][5],result.data[i][6]];
+				$scope.game.questions[i].correctAnswer = result.data[i][7];
+				$scope.game.questions[i].een = result.data[i][8];
+				$scope.totalQuestions++;
+			}
+		})
 
 	// Input Form & = Form validation variables
 	$scope.newQuestion = '';
