@@ -1,4 +1,4 @@
-AuthUserFile /public/sites/www.alexandervandermije.nl/droomwevers/test/admin/.htpasswd
+AuthUserFile /public/sites/www.alexandervandermije.nl/droomwevers/rijmSpel/admin/.htpasswd
 AuthGroupFile /dev/null
 AuthName "Login"
 AuthType Basic
