@@ -48,6 +48,11 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 				{
 					$scope.answersEmpty = true;
 				}
+				else if(typeof $scope.newQuestion.correctAnswer == 'undefined')
+				{
+					$scope.answersEmpty = false;
+					$scope.correctAnswerEmpty = true;
+				}
 				else
 				{
 					if(typeof $scope.newQuestion.extraWord == 'undefined')
@@ -55,6 +60,7 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 						$scope.newQuestion.extraWord = false;
 					}
 					$scope.answersEmpty = false;
+					$scope.correctAnswerEmpty = false;
 				
 					var config = 
 					{
