@@ -294,16 +294,25 @@ form
 {
 	font-size:18px;
 	text-align:center;
+	overflow: hidden;
+    white-space: nowrap;
 	th
 	{
 		text-align:center;
 		font-weight:bold;
-		overflow: hidden;
-    	white-space: nowrap;
 	}
 	td 
 	{
 		border-top:3px solid #ddd;
 		text-align:center;
+		width:100px;
+	}
+	input
+	{
+		text-align:center;
+	}
+	select
+	{
+		padding-left: 28%;
 	}
 }
