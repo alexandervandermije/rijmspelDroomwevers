@@ -25,6 +25,8 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 	$scope.answersEmpty = false;
 	$scope.questionEmpty = false;
 
+	$scope.editingQuestion = false;
+
 	$scope.adminWindow = 'manageQuestions'; 
 	
 	$scope.enterNewQuestion = function()
@@ -93,6 +95,10 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 				}
 			}
 		}
+	}
+	$scope.editQuestion = function(question)
+	{
+		console.log(question);
 	}
 	$scope.deleteQuestion = function(question)
 	{

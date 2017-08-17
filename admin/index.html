@@ -12,6 +12,7 @@
         
         <link href="../stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
         <link href="../stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <!--[if IE]>
             <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
         <![endif]-->
@@ -135,14 +136,24 @@
                 <tbody>
                     <tr ng-repeat="questionData in game.questions">
                         <td>{{questionData.id}}</td>
-                        <td>{{questionData.question}}</td>
-                        <td>{{questionData.is}}</td>
-                        <td>{{questionData.possibleAnswers[0]}}</td>
-                        <td>{{questionData.possibleAnswers[1]}}</td>
-                        <td>{{questionData.possibleAnswers[2]}}</td>
-                        <td>{{questionData.possibleAnswers[3]}}</td>
-                        <td>{{questionData.correctAnswer}}</td>
+                        <td ng-show="editingQuestion == false">{{questionData.question}}</td>
+                        <td ng-show="editingQuestion == false">{{questionData.is}}</td>
+                        <td ng-show="editingQuestion == false">{{questionData.possibleAnswers[0]}}</td>
+                        <td ng-show="editingQuestion == false">{{questionData.possibleAnswers[1]}}</td>
+                        <td ng-show="editingQuestion == false">{{questionData.possibleAnswers[2]}}</td>
+                        <td ng-show="editingQuestion == false">{{questionData.possibleAnswers[3]}}</td>
+                        <td ng-show="editingQuestion == false">{{questionData.correctAnswer}}</td>
+                        
+                        <td ng-show="editingQuestion == true"><input value={{questionData.question}} type="text"></td>
+                        <td ng-show="editingQuestion == true">{{questionData.is}}</td>
+                        <td ng-show="editingQuestion == true">{{questionData.possibleAnswers[0]}}</td>
+                        <td ng-show="editingQuestion == true">{{questionData.possibleAnswers[1]}}</td>
+                        <td ng-show="editingQuestion == true">{{questionData.possibleAnswers[2]}}</td>
+                        <td ng-show="editingQuestion == true">{{questionData.possibleAnswers[3]}}</td>
+                        <td ng-show="editingQuestion == true">{{questionData.correctAnswer}}</td>
                         <td><button class="btn" ng-click="deleteQuestion(this)">Verwijder vraag?</button></td>
+                        <td ng-show="editingQuestion == false"><button ng-click="editingQuestion = true" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Wijzig vraag?</button></td>
+                        <td ng-show="editingQuestion == true"><button ng-click="editingQuestion = false" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>Opslaan?</button></td>
                     </tr>
                 </tbody>
             </table>
