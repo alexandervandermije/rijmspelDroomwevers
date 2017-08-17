@@ -24,7 +24,7 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 	$scope.optionIsEmpty = false;
 	$scope.answersEmpty = false;
 	$scope.questionEmpty = false;
-
+	
 	$scope.editingQuestion = false;
 
 	$scope.adminWindow = 'manageQuestions'; 
