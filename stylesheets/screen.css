@@ -349,8 +349,10 @@ form #extraWordCheckbox {
 #manageQuestionsTable th {
   text-align: center;
   font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
 }
-/* line 302, ../sass/screen.scss */
+/* line 304, ../sass/screen.scss */
 #manageQuestionsTable td {
   border-top: 3px solid #ddd;
   text-align: center;
