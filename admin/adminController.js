@@ -29,6 +29,13 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 
 	$scope.adminWindow = 'manageQuestions'; 
 	
+	$scope.config = 
+	{
+        headers : {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+        }
+    }
+
 	$scope.enterNewQuestion = function()
 	{
 		console.log($scope.newQuestion);
@@ -64,12 +71,6 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 					$scope.answersEmpty = false;
 					$scope.correctAnswerEmpty = false;
 				
-					var config = 
-					{
-			            headers : {
-			                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-			            }
-			        }
 					var data = $.param({
 			                question:$scope.newQuestion.question,
 			                optionIs:$scope.newQuestion.optionIs,
@@ -80,15 +81,11 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 			                possibleAnswer4:$scope.newQuestion.possibleAnswer4,
 			                correctAnswer:$scope.newQuestion.correctAnswer
 			            });
-					$http.post("../postQuestion.php",data, config)
+					$http.post("../postQuestion.php",data, $scope.config)
 						.then(
 								function(response)
 								{
-									console.log('succes!');
-								},
-								function(response)
-								{
-									console.log('failure');
+									console.log(response);
 								}
 							)
 					location.reload();
@@ -98,12 +95,6 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 	}
 	$scope.saveEditedQuestion = function(question)
 	{
-		var config = 
-		{
-            headers : {
-                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-            }
-        }
 		var data = $.param({
 				id:question.questionData.id,
                 question:question.questionData.question,
@@ -114,7 +105,7 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
                 possibleAnswer4:question.questionData.possibleAnswers[3],
                 correctAnswer:question.questionData.correctAnswer
         });
-        $http.post("../editQuestion.php",data,config)
+        $http.post("../editQuestion.php",data,$scope.config)
         	.then(
         		function(response)
         		{
@@ -128,24 +119,14 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 	}
 	$scope.deleteQuestion = function(question)
 	{
-		var config = 
-		{
-            headers : {
-                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-            }
-        }
 		var data = $.param({
                 deleteID: question.questionData.id
             });
-		$http.post("../deleteQuestion.php",data, config)
+		$http.post("../deleteQuestion.php",data, $scope.config)
 			.then(
 					function(response)
 					{
-						console.log('succes!');
-					},
-					function(response)
-					{
-						console.log('failure');
+						console.log(response);
 					}
 				)
 
