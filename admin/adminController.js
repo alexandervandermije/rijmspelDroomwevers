@@ -98,7 +98,33 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 	}
 	$scope.saveEditedQuestion = function(question)
 	{
-		console.log(question.questionData);
+		var config = 
+		{
+            headers : {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+            }
+        }
+		var data = $.param({
+				id:question.questionData.id,
+                question:question.questionData.question,
+                optionIs:question.questionData.is,
+                possibleAnswer1:question.questionData.possibleAnswers[0],
+                possibleAnswer2:question.questionData.possibleAnswers[1],
+                possibleAnswer3:question.questionData.possibleAnswers[2],
+                possibleAnswer4:question.questionData.possibleAnswers[3],
+                correctAnswer:question.questionData.correctAnswer
+        });
+        $http.post("../editQuestion.php",data,config)
+        	.then(
+        		function(response)
+        		{
+        			console.log(response);
+        		},
+        		function(response)
+        		{
+        			console.log(response);
+        		}
+        	)   
 	}
 	$scope.deleteQuestion = function(question)
 	{
