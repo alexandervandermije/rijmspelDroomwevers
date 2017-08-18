@@ -154,7 +154,10 @@
                             <input class="form-control" ng-model="questionData.question" value={{questionData.question}} type="text">
                         </td>
                         <td>
-                            <input class="form-control" ng-model="questionData.is" value={{questionData.is}} type="text">
+                            <select class="form-control" ng-model="questionData.is" value={{questionData.is}} type="text">
+                                <option value="is">is</option>
+                                <option value="is niet">is niet</option>
+                            </select>
                         </td>
                         <td>
                             <input class="form-control" ng-model="questionData.possibleAnswers[0]" value={{questionData.possibleAnswers[0]}} type="text">
