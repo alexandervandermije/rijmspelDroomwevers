@@ -134,39 +134,44 @@
                         <th>Wijzigen</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr ng-repeat="questionData in game.questions">
+                <tbody ng-repeat="questionData in game.questions">
+                    <tr ng-show="editingQuestion == false">
                         <td>{{questionData.id}}</td>
-                        <td ng-show="editingQuestion == false">{{questionData.question}}</td>
-                        <td ng-show="editingQuestion == false">{{questionData.is}}</td>
-                        <td ng-show="editingQuestion == false">{{questionData.possibleAnswers[0]}}</td>
-                        <td ng-show="editingQuestion == false">{{questionData.possibleAnswers[1]}}</td>
-                        <td ng-show="editingQuestion == false">{{questionData.possibleAnswers[2]}}</td>
-                        <td ng-show="editingQuestion == false">{{questionData.possibleAnswers[3]}}</td>
-                        <td ng-show="editingQuestion == false">{{questionData.correctAnswer}}</td>
-                        <td ng-show="editingQuestion == true">
+                        <td>{{questionData.question}}</td>
+                        <td>{{questionData.is}}</td>
+                        <td>{{questionData.possibleAnswers[0]}}</td>
+                        <td>{{questionData.possibleAnswers[1]}}</td>
+                        <td>{{questionData.possibleAnswers[2]}}</td>
+                        <td>{{questionData.possibleAnswers[3]}}</td>
+                        <td>{{questionData.correctAnswer}}</td>
+                        <td><button class="btn" ng-click="deleteQuestion(this)">Verwijder vraag?</button></td>
+                        <td ng-show="editingQuestion == false"><button ng-click="editingQuestion = true" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Wijzig vraag?</button></td>
+                    </tr>
+                    <tr></tr>
+                    <tr ng-show="editingQuestion == true">
+                        <td>{{questionData.id}}</td>
+                        <td>
                             <input class="form-control" ng-model="questionData.question" value={{questionData.question}} type="text">
                         </td>
-                        <td ng-show="editingQuestion == true">
+                        <td>
                             <input class="form-control" ng-model="questionData.is" value={{questionData.is}} type="text">
                         </td>
-                        <td ng-show="editingQuestion == true">
+                        <td>
                             <input class="form-control" ng-model="questionData.possibleAnswers[0]" value={{questionData.possibleAnswers[0]}} type="text">
                         </td>
-                        <td ng-show="editingQuestion == true">
+                        <td>
                             <input class="form-control" ng-model="questionData.possibleAnswers[1]" value={{questionData.possibleAnswers[1]}} type="text">
                         </td>
-                        <td ng-show="editingQuestion == true">
+                        <td>
                             <input class="form-control" ng-model="questionData.possibleAnswers[2]" value={{questionData.possibleAnswers[2]}} type="text">
                         </td>
-                        <td ng-show="editingQuestion == true">
+                        <td>
                             <input class="form-control" ng-model="questionData.possibleAnswers[3]" value={{questionData.possibleAnswers[3]}} type="text">
                         </td>
-                        <td ng-show="editingQuestion == true">
+                        <td>
                             <select class="form-control" ng-model="questionData.correctAnswer" ng-options="answer for answer in questionData.possibleAnswers"></select>
                         </td>
                         <td><button class="btn" ng-click="deleteQuestion(this)">Verwijder vraag?</button></td>
-                        <td ng-show="editingQuestion == false"><button ng-click="editingQuestion = true" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Wijzig vraag?</button></td>
                         <td ng-show="editingQuestion == true"><button ng-click="editingQuestion = false" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>Opslaan?</button></td>
                     </tr>
                 </tbody>
