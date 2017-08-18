@@ -172,7 +172,7 @@
                             <select class="form-control" ng-model="questionData.correctAnswer" ng-options="answer for answer in questionData.possibleAnswers"></select>
                         </td>
                         <td><button class="btn" ng-click="deleteQuestion(this)">Verwijder vraag?</button></td>
-                        <td ng-show="editingQuestion == true"><button ng-click="editingQuestion = false" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>Opslaan?</button></td>
+                        <td ng-show="editingQuestion == true"><button ng-click="editingQuestion = false; saveEditedQuestion(this)" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>Opslaan?</button></td>
                     </tr>
                 </tbody>
             </table>
