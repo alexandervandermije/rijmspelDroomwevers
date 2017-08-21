@@ -127,7 +127,6 @@
             <table id="manageQuestionsTable" class="table table-striped">
                 <thead>
                     <tr>
-                        <th>id</th>
                         <th>Vraag</th>
                         <th>Is/is niet</th>
                         <th>Antwoord 1</th>
@@ -141,7 +140,6 @@
                 </thead>
                 <tbody ng-repeat="questionData in game.questions">
                     <tr ng-show="editingQuestion == false">
-                        <td>{{questionData.id}}</td>
                         <td>{{questionData.question}}</td>
                         <td>{{questionData.is}}</td>
                         <td>{{questionData.possibleAnswers[0]}}</td>
@@ -154,7 +152,6 @@
                     </tr>
                     <tr></tr>
                     <tr ng-show="editingQuestion == true">
-                        <td>{{questionData.id}}</td>
                         <td>
                             <input class="form-control" ng-model="questionData.question" value={{questionData.question}} type="text">
                         </td>
