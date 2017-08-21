@@ -27,8 +27,11 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 
 	$scope.editingQuestion = false;
 
+	$scope.dialogActive = false;
+	$scope.savedDeletedQuestion = '';
+
 	$scope.adminWindow = 'manageQuestions'; 
-	
+
 	$scope.config = 
 	{
         headers : {
@@ -117,10 +120,15 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
         		}
         	)   
 	}
-	$scope.deleteQuestion = function(question)
+	$scope.saveToBeDeletedQuestion = function(question)
+	{
+		$scope.dialogActive = true;
+		$scope.savedDeletedQuestion = question;
+	}
+	$scope.deleteQuestion = function()
 	{
 		var data = $.param({
-                deleteID: question.questionData.id
+                deleteID: $scope.savedDeletedQuestion.questionData.id
             });
 		$http.post("../deleteQuestion.php",data, $scope.config)
 			.then(
@@ -129,7 +137,8 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 						console.log(response);
 					}
 				)
-
+		$scope.savedDeletedQuestion = '';
+		$scope.dialogActive = false;
 		location.reload();
 	}
 });

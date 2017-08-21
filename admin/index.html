@@ -119,6 +119,11 @@
         </div>
         <div class="col-md-12 col-lg-10 col-lg-offset-1" ng-show="adminWindow == 'manageQuestions'">
             <h3>Manage Questions</h3>
+            <div id="dialog" ng-show="dialogActive == true">
+                <h2>Weet u zeker dat u deze vraag wilt verwijderen?</h2>
+                <button class="btn" ng-click="deleteQuestion()">Verwijder vraag</button>
+                <button class="btn btn-danger" ng-click="dialogActive = false">Annuleer</button>
+            </div>
             <table id="manageQuestionsTable" class="table table-striped">
                 <thead>
                     <tr>
@@ -144,7 +149,7 @@
                         <td>{{questionData.possibleAnswers[2]}}</td>
                         <td>{{questionData.possibleAnswers[3]}}</td>
                         <td>{{questionData.correctAnswer}}</td>
-                        <td><button class="btn" ng-click="deleteQuestion(this)">Verwijder vraag?</button></td>
+                        <td><button class="btn" ng-click="saveToBeDeletedQuestion(this);">Verwijder vraag?</button></td>
                         <td ng-show="editingQuestion == false"><button ng-click="editingQuestion = true" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Wijzig vraag?</button></td>
                     </tr>
                     <tr></tr>
@@ -174,7 +179,7 @@
                         <td>
                             <select class="form-control" ng-model="questionData.correctAnswer" ng-options="answer for answer in questionData.possibleAnswers"></select>
                         </td>
-                        <td><button class="btn" ng-click="deleteQuestion(this)">Verwijder vraag?</button></td>
+                        <td><button class="btn" ng-click="saveToBeDeletedQuestion(this)">Verwijder vraag?</button></td>
                         <td ng-show="editingQuestion == true"><button ng-click="editingQuestion = false; saveEditedQuestion(this)" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>Opslaan?</button></td>
                     </tr>
                 </tbody>
