@@ -71,14 +71,15 @@
             <div id="footer" class="row">
                 <div class="col-sm-12">
                     <div id="gameRulesContainer">
-                        <div id="gameRulesPopup" class="row">
+                        <div ng-show="showGameRules" id="gameRulesPopup" class="row">
                             <h2>SpelRegels</h2>
                             <br/>
                             <p>Lees de gegeven woord(en).Daarna kies je de  categorie ís'of 'is niet'.'Doelstelling is om het gegeven woord zo dichtbij mogelijk te matchen met het tegenovergestelde woord of het woord met dezelfde betekenis. Kies eerst of het hetzelfde is, of het tegenovergestelde.</p>
+                            <br/>
                             <p>Als je het juiste antwoord kiest, hoor je gejuich. Als je het verkeerde antwoord kiest, is er een afkeurende reactie. Het juiste antwoord heeft een relatie met het gegeven woord.
                             </p>
                         </div>
-                        <div id="gameRulesIconContainer"><i class="fa fa-info fa-3x rulesIcon" aria-hidden="true"></i></div>
+                        <div id="gameRulesIconContainer" ng-click="gameRules()"><i class="fa fa-info fa-3x rulesIcon" aria-hidden="true"></i></div>
                     </div>
                     <p id="questionNumber">Vraag: {{currentQuestion +1}}/{{totalQuestions}}</p>
                 </div>

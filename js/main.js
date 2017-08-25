@@ -36,6 +36,9 @@ gameApp.controller('MainController', function MainController($scope, $http) {
 	var foutAudio = new Audio("sound/kidsAww.mp3");
 	foutAudio.volume = 0.1;
 
+	//game Rules
+	$scope.showGameRules = false;
+
 	$scope.checkAnswer = function(chosenAnswer)
 	{
 		if($scope.dialogActive == true)
@@ -94,5 +97,17 @@ gameApp.controller('MainController', function MainController($scope, $http) {
 		$scope.currentQuestion = 0;
 		$scope.isTrue = '';
 		$scope.$apply;
+	}
+	$scope.gameRules = function()
+	{
+		console.log('gameRules');
+		if($scope.showGameRules)
+		{
+			$scope.showGameRules = false
+		}
+		else
+		{
+			$scope.showGameRules = true;
+		}
 	}
 });
