@@ -12,6 +12,7 @@
         
         <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
         <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <!--[if IE]>
             <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
         <![endif]-->
@@ -67,12 +68,7 @@
                     </div>
                 </div>
             </div>
-            <!-- <div id="menuRow" class="row">
-                <div class="col-sm-12">
-                    <p id="score">Score: {{score}}</p>
-                </div>
-            </div>
-            <div id="gameRulesRow" class="row">
+            <!--<div id="gameRulesPopUp" class="row">
                 <h2>SpelRegels</h2>
                 <div class="col-sm-4 col-sm-offset-2">
                     <p>Lees de gegeven woord(en).Daarna kies je de  categorie ís'of 'is niet'.'Doelstelling is om het gegeven woord zo dichtbij mogelijk te matchen met het tegenovergestelde woord of het woord met dezelfde betekenis. Kies eerst of het hetzelfde is, of het tegenovergestelde.</p>
@@ -85,6 +81,7 @@
             -->
             <div id="footer" class="row">
                 <div class="col-sm-12">
+                    <div id="gameRulesIconContainer"><i class="fa fa-info fa-3x rulesIcon" aria-hidden="true"></i></div>
                     <p id="questionNumber">Vraag: {{currentQuestion +1}}/{{totalQuestions}}</p>
                 </div>
             </div>

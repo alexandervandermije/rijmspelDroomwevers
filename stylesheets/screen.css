@@ -244,35 +244,49 @@ button {
   opacity: 0.8;
   font-size: 18px;
 }
+/* line 179, ../sass/screen.scss */
+#footer #gameRulesIconContainer {
+  background-color: white;
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  bottom: 10px;
+  margin-left: 5%;
+}
+/* line 189, ../sass/screen.scss */
+#footer .rulesIcon {
+  margin-top: 12px;
+}
 
 @media (max-width: 700px) {
-  /* line 183, ../sass/screen.scss */
+  /* line 197, ../sass/screen.scss */
   #dialog {
     width: auto;
     margin: 0 10px 0 10px;
   }
 
-  /* line 188, ../sass/screen.scss */
+  /* line 202, ../sass/screen.scss */
   #possibleAnswersRow {
     margin-left: -32px;
   }
-  /* line 193, ../sass/screen.scss */
+  /* line 207, ../sass/screen.scss */
   #possibleAnswersRow .possibleAnswerDiv .possibleAnswerButton {
     width: 220px;
     margin-top: 10px;
   }
-  /* line 199, ../sass/screen.scss */
+  /* line 213, ../sass/screen.scss */
   #possibleAnswersRow .possibleAnswerDiv:first-of-type {
     margin-left: 15px;
   }
 
-  /* line 204, ../sass/screen.scss */
+  /* line 218, ../sass/screen.scss */
   #footer {
     top: 160px;
     position: absolute;
     z-index: -1;
   }
-  /* line 209, ../sass/screen.scss */
+  /* line 223, ../sass/screen.scss */
   #footer #questionNumber {
     float: none;
     margin: 0;
@@ -280,31 +294,31 @@ button {
   }
 }
 @media (max-width: 400px) {
-  /* line 223, ../sass/screen.scss */
+  /* line 237, ../sass/screen.scss */
   #possibleAnswersRow .possibleAnswerDiv .possibleAnswerButton {
     width: 250px;
     margin-top: 0px;
     margin-bottom: 10px;
   }
 
-  /* line 231, ../sass/screen.scss */
+  /* line 245, ../sass/screen.scss */
   #isofnietRow p:first-of-type {
     display: block;
     margin-top: 5px;
     margin-bottom: 10px;
   }
 
-  /* line 239, ../sass/screen.scss */
+  /* line 253, ../sass/screen.scss */
   #isofnietRow .isofnietButtons {
     width: 250px;
   }
 }
 /* Admin Styling */
-/* line 250, ../sass/screen.scss */
+/* line 263, ../sass/screen.scss */
 #admin h2 {
   margin-bottom: 10px;
 }
-/* line 254, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 #admin h3 {
   font-size: 18px;
   font-family: "Futura Md BT";
@@ -313,26 +327,26 @@ button {
   margin-bottom: 10px;
 }
 
-/* line 266, ../sass/screen.scss */
+/* line 279, ../sass/screen.scss */
 form h2 {
   margin-bottom: 1%;
 }
-/* line 270, ../sass/screen.scss */
+/* line 283, ../sass/screen.scss */
 form button {
   float: right;
 }
-/* line 274, ../sass/screen.scss */
+/* line 287, ../sass/screen.scss */
 form #extraWordExplanation {
   float: right;
 }
-/* line 278, ../sass/screen.scss */
+/* line 291, ../sass/screen.scss */
 form #extraWordCheckbox {
   height: 28px;
   margin-top: 2px;
   box-shadow: none;
 }
 
-/* line 286, ../sass/screen.scss */
+/* line 299, ../sass/screen.scss */
 .warningText {
   color: red;
   text-align: center;
@@ -340,29 +354,29 @@ form #extraWordCheckbox {
   margin-top: 1%;
 }
 
-/* line 293, ../sass/screen.scss */
+/* line 306, ../sass/screen.scss */
 #manageQuestionsTable {
   font-size: 18px;
   text-align: center;
   overflow: hidden;
   white-space: nowrap;
 }
-/* line 299, ../sass/screen.scss */
+/* line 312, ../sass/screen.scss */
 #manageQuestionsTable th {
   text-align: center;
   font-weight: bold;
 }
-/* line 304, ../sass/screen.scss */
+/* line 317, ../sass/screen.scss */
 #manageQuestionsTable td {
   border-top: 3px solid #ddd;
   text-align: center;
   width: 100px;
 }
-/* line 310, ../sass/screen.scss */
+/* line 323, ../sass/screen.scss */
 #manageQuestionsTable input {
   text-align: center;
 }
-/* line 314, ../sass/screen.scss */
+/* line 327, ../sass/screen.scss */
 #manageQuestionsTable select {
   padding-left: 28%;
 }
