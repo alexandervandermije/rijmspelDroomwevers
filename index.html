@@ -23,6 +23,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     </head>
     <body ng-app="gameApp" ng-controller="MainController">
+    <img class="backgroundImage" src="img/background1.png"/>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -70,7 +71,8 @@
             </div>
             <div id="footer" class="row">
                 <div class="col-sm-12">
-                    <div id="gameRulesContainer">
+
+                    <!-- <div id="gameRulesContainer">
                         <div ng-show="showGameRules" id="gameRulesPopup" class="row">
                             <h2>SpelRegels</h2>
                             <br/>
@@ -80,7 +82,7 @@
                             </p>
                         </div>
                         <div id="gameRulesIconContainer" ng-click="gameRules()"><i class="fa fa-info fa-3x rulesIcon" aria-hidden="true"></i></div>
-                    </div>
+                    </div> -->
                     <p id="questionNumber">Vraag: {{currentQuestion +1}}/{{totalQuestions}}</p>
                 </div>
             </div>

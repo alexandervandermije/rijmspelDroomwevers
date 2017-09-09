@@ -70,11 +70,34 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* line 13, ../sass/screen.scss */
 body {
-  background-color: #d8bc41;
   color: #32477e;
+  z-index: 1;
 }
 
-/* line 18, ../sass/screen.scss */
+@media (max-width: 1200px) {
+  /* line 21, ../sass/screen.scss */
+  body {
+    background-color: #b4d5f0;
+    overflow-x: hidden;
+  }
+
+  /* line 26, ../sass/screen.scss */
+  .backgroundImage {
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 36, ../sass/screen.scss */
+  .backgroundImage {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+}
+/* line 47, ../sass/screen.scss */
 #logo {
   display: block;
   width: 250px;
@@ -83,7 +106,7 @@ body {
   margin-top: 15px;
 }
 
-/* line 26, ../sass/screen.scss */
+/* line 55, ../sass/screen.scss */
 h2 {
   font-size: 24px;
   font-family: "Futura Md BT";
@@ -91,37 +114,37 @@ h2 {
   margin-top: 10px;
 }
 
-/* line 33, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 p, button {
   font-family: "Futura Md BT";
   font-size: 18px;
 }
 
-/* line 38, ../sass/screen.scss */
+/* line 67, ../sass/screen.scss */
 button {
   background-color: #32477e;
   color: white;
 }
 
-/* line 43, ../sass/screen.scss */
+/* line 72, ../sass/screen.scss */
 .bold {
   font-weight: bold;
 }
 
-/* line 47, ../sass/screen.scss */
+/* line 76, ../sass/screen.scss */
 #game {
   margin-top: 45px;
   text-align: center;
 }
 
-/* line 52, ../sass/screen.scss */
+/* line 81, ../sass/screen.scss */
 .grayScale {
   background-image: none;
   background-color: grey !important;
   border-color: grey;
 }
 
-/* line 58, ../sass/screen.scss */
+/* line 87, ../sass/screen.scss */
 #dialog {
   width: 30em;
   height: auto;
@@ -139,29 +162,29 @@ button {
   border: 2px white solid;
   box-shadow: 1px 1px 5px grey;
 }
-/* line 76, ../sass/screen.scss */
+/* line 105, ../sass/screen.scss */
 #dialog h2 {
   font-size: 2em;
   margin-top: 5%;
   margin-bottom: 3%;
 }
-/* line 82, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 #dialog p {
   margin-top: 30px;
   font-size: 1em;
 }
-/* line 87, ../sass/screen.scss */
+/* line 116, ../sass/screen.scss */
 #dialog button {
   margin-top: 6%;
   font-size: 1.5em;
   width: auto;
 }
 
-/* line 94, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 #isofnietRow {
   margin-top: 50px;
 }
-/* line 97, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
 #isofnietRow .isofnietButtons {
   width: 135px;
   height: 50px;
@@ -170,20 +193,20 @@ button {
   box-shadow: 1.5px 1.5px 10px grey;
   text-transform: lowercase;
 }
-/* line 105, ../sass/screen.scss */
+/* line 134, ../sass/screen.scss */
 #isofnietRow .isofnietButtons .extraWord {
   display: inline;
   margin-left: 4px;
 }
-/* line 111, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 #isofnietRow .isofnietButtons:hover {
   color: #d8bc41;
 }
-/* line 115, ../sass/screen.scss */
+/* line 144, ../sass/screen.scss */
 #isofnietRow p {
   margin-top: 20px;
 }
-/* line 119, ../sass/screen.scss */
+/* line 148, ../sass/screen.scss */
 #isofnietRow p:first-of-type {
   display: inline;
   margin: 0 10px 0 10px;
@@ -191,21 +214,21 @@ button {
   font-size: 21px;
 }
 
-/* line 127, ../sass/screen.scss */
+/* line 156, ../sass/screen.scss */
 #possibleAnswersRow {
   margin-top: 30px;
 }
-/* line 131, ../sass/screen.scss */
+/* line 160, ../sass/screen.scss */
 #possibleAnswersRow .possibleAnswerDiv:first-of-type {
   margin-left: 0;
 }
-/* line 135, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 #possibleAnswersRow .possibleAnswerDiv {
   width: auto;
   display: inline;
   margin-left: 15px;
 }
-/* line 141, ../sass/screen.scss */
+/* line 170, ../sass/screen.scss */
 #possibleAnswersRow .possibleAnswerDiv .possibleAnswerButton {
   width: 125px;
   height: 50px;
@@ -215,28 +238,28 @@ button {
   box-shadow: 2px 2px 10px grey;
 }
 
-/* line 152, ../sass/screen.scss */
+/* line 181, ../sass/screen.scss */
 #score {
   margin-top: 2px;
   font-size: 28px;
 }
 
-/* line 157, ../sass/screen.scss */
+/* line 186, ../sass/screen.scss */
 #gameRulesRow {
   margin-top: 25px;
 }
-/* line 160, ../sass/screen.scss */
+/* line 189, ../sass/screen.scss */
 #gameRulesRow h2 {
   margin-bottom: 10px;
 }
 
-/* line 166, ../sass/screen.scss */
+/* line 195, ../sass/screen.scss */
 #footer {
   width: 100%;
   position: fixed;
   bottom: 0;
 }
-/* line 171, ../sass/screen.scss */
+/* line 200, ../sass/screen.scss */
 #footer #questionNumber {
   float: right;
   margin: 0 40px 50px 0;
@@ -244,7 +267,7 @@ button {
   opacity: 0.8;
   font-size: 18px;
 }
-/* line 179, ../sass/screen.scss */
+/* line 208, ../sass/screen.scss */
 #footer #gameRulesPopup {
   background-color: white;
   border-radius: 5px;
@@ -255,7 +278,7 @@ button {
   padding-left: 10px;
   padding-right: 10px;
 }
-/* line 190, ../sass/screen.scss */
+/* line 219, ../sass/screen.scss */
 #footer #gameRulesIconContainer {
   background-color: white;
   border-radius: 100%;
@@ -266,39 +289,39 @@ button {
   margin-left: 5%;
   border: solid 1px rgba(50, 71, 126, 0.3);
 }
-/* line 201, ../sass/screen.scss */
+/* line 230, ../sass/screen.scss */
 #footer .rulesIcon {
   margin-top: 12px;
 }
 
 @media (max-width: 700px) {
-  /* line 209, ../sass/screen.scss */
+  /* line 238, ../sass/screen.scss */
   #dialog {
     width: auto;
     margin: 0 10px 0 10px;
   }
 
-  /* line 214, ../sass/screen.scss */
+  /* line 243, ../sass/screen.scss */
   #possibleAnswersRow {
     margin-left: -32px;
   }
-  /* line 219, ../sass/screen.scss */
+  /* line 248, ../sass/screen.scss */
   #possibleAnswersRow .possibleAnswerDiv .possibleAnswerButton {
     width: 220px;
     margin-top: 10px;
   }
-  /* line 225, ../sass/screen.scss */
+  /* line 254, ../sass/screen.scss */
   #possibleAnswersRow .possibleAnswerDiv:first-of-type {
     margin-left: 15px;
   }
 
-  /* line 230, ../sass/screen.scss */
+  /* line 259, ../sass/screen.scss */
   #footer {
     top: 160px;
     position: absolute;
     z-index: -1;
   }
-  /* line 235, ../sass/screen.scss */
+  /* line 264, ../sass/screen.scss */
   #footer #questionNumber {
     float: none;
     margin: 0;
@@ -306,31 +329,31 @@ button {
   }
 }
 @media (max-width: 400px) {
-  /* line 249, ../sass/screen.scss */
+  /* line 278, ../sass/screen.scss */
   #possibleAnswersRow .possibleAnswerDiv .possibleAnswerButton {
     width: 250px;
     margin-top: 0px;
     margin-bottom: 10px;
   }
 
-  /* line 257, ../sass/screen.scss */
+  /* line 286, ../sass/screen.scss */
   #isofnietRow p:first-of-type {
     display: block;
     margin-top: 5px;
     margin-bottom: 10px;
   }
 
-  /* line 265, ../sass/screen.scss */
+  /* line 294, ../sass/screen.scss */
   #isofnietRow .isofnietButtons {
     width: 250px;
   }
 }
 /* Admin Styling */
-/* line 275, ../sass/screen.scss */
+/* line 304, ../sass/screen.scss */
 #admin h2 {
   margin-bottom: 10px;
 }
-/* line 279, ../sass/screen.scss */
+/* line 308, ../sass/screen.scss */
 #admin h3 {
   font-size: 18px;
   font-family: "Futura Md BT";
@@ -339,26 +362,26 @@ button {
   margin-bottom: 10px;
 }
 
-/* line 291, ../sass/screen.scss */
+/* line 320, ../sass/screen.scss */
 form h2 {
   margin-bottom: 1%;
 }
-/* line 295, ../sass/screen.scss */
+/* line 324, ../sass/screen.scss */
 form button {
   float: right;
 }
-/* line 299, ../sass/screen.scss */
+/* line 328, ../sass/screen.scss */
 form #extraWordExplanation {
   float: right;
 }
-/* line 303, ../sass/screen.scss */
+/* line 332, ../sass/screen.scss */
 form #extraWordCheckbox {
   height: 28px;
   margin-top: 2px;
   box-shadow: none;
 }
 
-/* line 311, ../sass/screen.scss */
+/* line 340, ../sass/screen.scss */
 .warningText {
   color: red;
   text-align: center;
@@ -366,29 +389,29 @@ form #extraWordCheckbox {
   margin-top: 1%;
 }
 
-/* line 318, ../sass/screen.scss */
+/* line 347, ../sass/screen.scss */
 #manageQuestionsTable {
   font-size: 18px;
   text-align: center;
   overflow: hidden;
   white-space: nowrap;
 }
-/* line 324, ../sass/screen.scss */
+/* line 353, ../sass/screen.scss */
 #manageQuestionsTable th {
   text-align: center;
   font-weight: bold;
 }
-/* line 329, ../sass/screen.scss */
+/* line 358, ../sass/screen.scss */
 #manageQuestionsTable td {
   border-top: 3px solid #ddd;
   text-align: center;
   width: 100px;
 }
-/* line 335, ../sass/screen.scss */
+/* line 364, ../sass/screen.scss */
 #manageQuestionsTable input {
   text-align: center;
 }
-/* line 339, ../sass/screen.scss */
+/* line 368, ../sass/screen.scss */
 #manageQuestionsTable select {
   padding-left: 28%;
 }

@@ -12,9 +12,38 @@ $primaryFont: 'Futura Md BT';
 
 body
 {
-	background-color:$backgroundColor;
 	color:$primaryTextColor;
+	z-index:1;
 }
+
+@media(max-width:1200px)
+{
+	body
+	{
+		background-color:#b4d5f0;
+		overflow-x:hidden;
+	}
+	.backgroundImage
+	{
+		position:absolute;
+		height:100%;
+		z-index:-1;
+	}
+}
+
+@media(min-width:1200px)
+{
+	.backgroundImage
+	{
+		width:100%;
+		height:100%;
+		position:absolute;
+		z-index:-1;
+	}	
+}
+
+
+
 #logo
 {
 	display:block;
