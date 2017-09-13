@@ -390,28 +390,38 @@ form #extraWordCheckbox {
 }
 
 /* line 347, ../sass/screen.scss */
+.adminBackgroundImages {
+  width: 100%;
+}
+
+/* line 351, ../sass/screen.scss */
+.selectedBackground {
+  border: solid 4px #777;
+}
+
+/* line 355, ../sass/screen.scss */
 #manageQuestionsTable {
   font-size: 18px;
   text-align: center;
   overflow: hidden;
   white-space: nowrap;
 }
-/* line 353, ../sass/screen.scss */
+/* line 361, ../sass/screen.scss */
 #manageQuestionsTable th {
   text-align: center;
   font-weight: bold;
 }
-/* line 358, ../sass/screen.scss */
+/* line 366, ../sass/screen.scss */
 #manageQuestionsTable td {
   border-top: 3px solid #ddd;
   text-align: center;
   width: 100px;
 }
-/* line 364, ../sass/screen.scss */
+/* line 372, ../sass/screen.scss */
 #manageQuestionsTable input {
   text-align: center;
 }
-/* line 368, ../sass/screen.scss */
+/* line 376, ../sass/screen.scss */
 #manageQuestionsTable select {
   padding-left: 28%;
 }

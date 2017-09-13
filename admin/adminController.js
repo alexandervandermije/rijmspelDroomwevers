@@ -32,6 +32,8 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 
 	$scope.adminWindow = 'manageQuestions'; 
 
+	$scope.selectedBackground = 1;
+
 	$scope.config = 
 	{
         headers : {
@@ -140,5 +142,10 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 		$scope.savedDeletedQuestion = '';
 		$scope.dialogActive = false;
 		location.reload();
+	}
+	$scope.selectBackground = function(selected)
+	{
+		$scope.selectedBackground = selected;
+		
 	}
 });
