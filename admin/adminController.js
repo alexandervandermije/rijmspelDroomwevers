@@ -84,7 +84,8 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 			                possibleAnswer2:$scope.newQuestion.possibleAnswer2,
 			                possibleAnswer3:$scope.newQuestion.possibleAnswer3,
 			                possibleAnswer4:$scope.newQuestion.possibleAnswer4,
-			                correctAnswer:$scope.newQuestion.correctAnswer
+			                correctAnswer:$scope.newQuestion.correctAnswer,
+			                background:$scope.selectedBackground
 			            });
 					$http.post("../postQuestion.php",data, $scope.config)
 						.then(
