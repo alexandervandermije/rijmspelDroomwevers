@@ -143,9 +143,9 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 		$scope.dialogActive = false;
 		location.reload();
 	}
-	$scope.selectBackground = function(selected)
+	$scope.selectBackground = function(selectedNumber)
 	{
-		$scope.selectedBackground = selected;
-		
+		$scope.selectedBackground = selectedNumber;
+		console.log($scope.selectedBackground);		
 	}
 });
