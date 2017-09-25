@@ -146,6 +146,7 @@
                         <th>Antwoord 3</th>
                         <th>Antwoord 4</th>
                         <th>Correct antwoord</th>
+                        <th>Achtergrond</th>
                         <th>Verwijder</th>
                         <th>Wijzigen</th>
                     </tr>
@@ -159,6 +160,7 @@
                         <td>{{questionData.possibleAnswers[2]}}</td>
                         <td>{{questionData.possibleAnswers[3]}}</td>
                         <td>{{questionData.correctAnswer}}</td>
+                        <td>{{questionData.background}}</td>
                         <td><button class="btn" ng-click="saveToBeDeletedQuestion(this);">Verwijder vraag?</button></td>
                         <td ng-show="editingQuestion == false"><button ng-click="editingQuestion = true" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Wijzig vraag?</button></td>
                     </tr>
@@ -187,6 +189,13 @@
                         </td>
                         <td>
                             <select class="form-control" ng-model="questionData.correctAnswer" ng-options="answer for answer in questionData.possibleAnswers"></select>
+                        </td>
+                        <td>
+                            <select class="form-control" ng-model="questionData.background">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
                         </td>
                         <td><button class="btn" ng-click="saveToBeDeletedQuestion(this)">Verwijder vraag?</button></td>
                         <td ng-show="editingQuestion == true"><button ng-click="editingQuestion = false; saveEditedQuestion(this)" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>Opslaan?</button></td>

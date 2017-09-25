@@ -16,6 +16,7 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 				$scope.game.questions[i].possibleAnswers = [result.data[i][3],result.data[i][4],result.data[i][5],result.data[i][6]];
 				$scope.game.questions[i].correctAnswer = result.data[i][7];
 				$scope.game.questions[i].een = result.data[i][8];
+				$scope.game.questions[i].background = result.data[i][9];
 				$scope.totalQuestions++;
 			}
 		})
@@ -109,7 +110,8 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
                 possibleAnswer2:question.questionData.possibleAnswers[1],
                 possibleAnswer3:question.questionData.possibleAnswers[2],
                 possibleAnswer4:question.questionData.possibleAnswers[3],
-                correctAnswer:question.questionData.correctAnswer
+                correctAnswer:question.questionData.correctAnswer,
+                background:question.questionData.background
         });
         $http.post("../editQuestion.php",data,$scope.config)
         	.then(
@@ -146,7 +148,6 @@ gameApp.controller('AdminController', function MainController($scope, $http) {
 	}
 	$scope.selectBackground = function(selectedNumber)
 	{
-		$scope.selectedBackground = selectedNumber;
-		console.log($scope.selectedBackground);		
+		$scope.selectedBackground = selectedNumber;	
 	}
 });

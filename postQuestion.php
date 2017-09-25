@@ -7,6 +7,7 @@ $SendPossibleAnswer2 = $_POST['possibleAnswer2'];
 $SendPossibleAnswer3 = $_POST['possibleAnswer3'];
 $SendPossibleAnswer4 = $_POST['possibleAnswer4'];
 $SendCorrectAnswer = $_POST['correctAnswer'];
+$SendBackground = $_POST['background'];
 
 include "connection.php";
 
@@ -14,7 +15,7 @@ if (mysqli_connect_errno()) {
   printf('Connect failed: %s\n', mysqli_connect_error());
   exit();
 }
-$query = "INSERT INTO `rijmspelquestions` (question, optionIs, answer1, answer2, answer3, answer4, correctAnswer, extraWord) VALUES ('$SendQuestion', '$SendOptionIs', '$SendPossibleAnswer1', '$SendPossibleAnswer2','$SendPossibleAnswer3', '$SendPossibleAnswer4','$SendCorrectAnswer','$SendExtraWord' )";
+$query = "INSERT INTO `rijmspelquestions` (question, optionIs, answer1, answer2, answer3, answer4, correctAnswer, extraWord, background) VALUES ('$SendQuestion', '$SendOptionIs', '$SendPossibleAnswer1', '$SendPossibleAnswer2','$SendPossibleAnswer3', '$SendPossibleAnswer4','$SendCorrectAnswer','$SendExtraWord', '$SendBackground')";
 
 if (mysqli_query($connection, $query)) {
                echo "New record created successfully";
